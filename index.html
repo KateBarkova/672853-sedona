@@ -5,142 +5,140 @@
     <title>HTML Academy: Седона</title>
   </head>
   <body>
-  	<header class="main-header">
+    <header class="main-header">
       <nav class="main-navigation">
-      	<a class="main-header-logo">
-      	  <img src="img/index-logo.svg" width="138" height="70" alt="Логотип Седона">
-      	</a>
+        <a class="main-header-logo">
+          <img src="img/index-logo.svg" width="138" height="70" alt="Логотип Седона">
+        </a>
         <ul class="site-menu">
-          <li class="menu-item"><a href="info.html">Информация</a></li>
-          <li class="menu-item"><a href="foto.html">Фото и видео</a></li>
-          <li class="menu-item"><a href="map.html">Карта штата</a></li>
-          <li class="menu-item"><a href="hotels.html">Гостиницы</a></li>
-        <!-- ссылкам нужно тоже присвоить класс? -->
+          <li class="menu-item"><a class="menu-link" href="info.html">Информация</a></li>
+          <li class="menu-item"><a class="menu-link" href="foto.html">Фото и видео</a></li>
+          <li class="menu-item"><a class="menu-link" href="map.html">Карта штата</a></li>
+          <li class="menu-item"><a class="menu-link" href="inner.html">Гостиницы</a></li>
         </ul>
       </nav>
     </header>
     <main class="container">
+     <!--  Денис, горы я оставила в main, т.к. преподаватель на лекции прямо разбирал именно седону и сказал, что в хедере должно быть только то, что повторяется на всех страицах, и указал, что горы нужно разместить в main -->
+      <div class="mountans">
+        Горы-background
+      </div>
+      <div class="intro-text">
+        Text-background
+      </div>
+      <!-- Либо:
+      div class="mountans">
+        <img src="img/intro.svg" width="" height="" alt="Wellcome-text">
+      </div>  как правильно будет, не понимаю 
+      -->
       <h1 class="visually-hidden">Седона</h1> 
-			<section class="intro"> 
-      	<img src="img/intro-wellcome.svg" width="188" height="45" alt="Wellcome">
-      	<img src="img/intro-to the gorgeous" width="176" height="30" alt="to the gorgeous">
-      	<img src="img/intro-sedona.svg" width="458" height="78" alt="Sedona">
-      	<img src="img/intro-because.svg" width="296" height="80" alt="Because the Grand Canyon sucks!">
-      	<!-- это вообще картинки? Или это будет как фон? Может в фотошопе склеить все в одну картинку и вставить ее одну, м? Текст сам, не гору. Или это вообще все-все фоном? А гора - картинка или фон?)))-->
+      <h2 class="reasons-title">
+        Седона — небольшой городок в Аризоне, заслуживающий большего!
+      </h2>
+      <p class="reasons-text">
+        Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!
+      </p>
+
+      <section class="reasons">
+        <h2 class="visually-hidden">Преимущества Седоны</h2> 
+        <ul class="reasons-list">
+          <!-- 1 блок -->
+          <li class="reasons-item">
+            <ul class="reasons-foto">
+              <li class="reason-item-blue"> 
+                <h3 class="reason-title">Настоящий городок</h3>
+                <p class="reason-number">№1</p>
+                <p class="reason-text">Седона — не аттракцион для туристов, там течет своя жизнь</p>
+              </li>
+              <li class="reason-foto">
+                <img class="foto1" src="img/reason-foto1.svg" width="800" height="256" alt="foto-1">
+              </li>
+            </ul>
+          </li>
+          <!-- 2 блок -->
+          <li class="reasons-item">  
+            <ul class="advice-list">
+              <li class="advice-item">
+                <h3 class="reason-title">Жилье</h3>
+                <p class="reason-text">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+              </li>
+              <li class="advice-item">
+                <h3 class="reason-title">Еда</h3>
+                <p class="reason-text">Всегда заказывайте фирменный бургер, Вы не разочаруетесь!</p>
+              </li>
+              <li class="advice-item">
+                <h3 class="reason-title">Сувениры</h3>
+                <p class="reason-text">Не только китайского, но и местного производства!</p>
+              </li>
+            </ul>
+          </li>
+          <!-- 3 блок -->
+          <li class="reasons-item">
+            <ul class="reasons-foto">
+              <li class="reason-item-blue"> 
+                <h3 class="reason-title">Там есть мост дьявола</h3>
+                <p class="reason-number">№2</p>
+                <p class="reason-text">Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+              </li>
+              <li class="reason-foto">
+                <img class="foto2" src="img/reason-foto2.svg" width="800" height="256" alt="foto-2">
+              </li>
+            </ul>
+          </li>
+          <!-- 4 блок -->
+          <li class="reasons-item">
+            <ul class="last-reasons">
+              <li class="last-reasons-item">
+                <h3 class="reason-title">Небольшая площадь</h3>
+                <p class="reason-number">№3</p>
+                <p class="reason-text">Все достопримечательности находятся очень близко</p>
+              </li>
+              <li class="last-reasons-item">
+                <h3 class="reason-title">Красивая дорога</h3>
+                <p class="reason-number">№4</p>
+                <p class="reason-text">Ехать в Седону из Лас-Вегаса совсем не скучно</p>
+              </li>
+              <li class="last-reasons-item">
+                <h3 class="reason-title">Мало туристов</h3>
+                <p class="reason-number">№5</p>
+                <p class="reason-text">Большинство едет в гранд каньон и толпится там</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </section>
-      <article class="reasons">
-      	<header class="reasons-header">
-      		<h2 class="reasons-title">
-      			Седона — небольшой городок в Аризоне, заслуживающий большего!
-      		</h2>
-      		<p class="reasons-text">
-      			Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!
-      		</p>
-      	</header>
-      	<!-- 1 -->
-      	<section class="reason-one">
-          <ul>
-            <li class="reason-item-blue"> 
-              <h3 class="reason-title">Настоящий городок</h3>
-              <p class="reason-number">№1</p>
-              <p class="reason-text">Седона — не аттракцион для туристов, там течет своя жизнь</p>
-            </li>
-            <li>
-              <img class="foto1" src="img/reason-foto1.svg" class width="800" height="256" alt="foto-1">
-            </li>
-          </ul>
-				</section>
-        <!-- 2 -->
-        <section class="advice">
-	        <ul class="advice-list">
-	        	<li class="advice-item">
-	        		<!-- в списке советов - заголовки и текст такие же как и в причинах. Можно классы поставить для h3 b p - такие же как в причинах? -->
-	        		<h3 class="reason-title">Жилье</h3>
-	        		<p class="reason-text">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
-	        	</li>
-						<li class="advice-item">
-	        		<h3 class="reason-title">Еда</h3>
-	        		<p class="reason-text">Всегда заказывайте фирменный бургер, Вы не разочаруетесь!</p>
-	        	</li>
-	        	<li class="advice-item">
-	        		<h3 class="reason-title">Сувениры</h3>
-	        		<p class="reason-text">Не только китайского, но и местного производства!</p>
-	        	</li>
-	        </ul>
-				</section>
-				<!-- 3 -->
-        <section class="reason-three">
-          <ul>
-            <li class="reason-item-blue"> 
-              <h3 class="reason-title">Там есть мост дьявола</h3>
-              <p class="reason-number">№2</p>
-              <p class="reason-text">Да, по нему можно пройти! Если конечно вы осмелитесь</p>
-            </li>
-            <li>
-              <img class="foto2" src="img/reason-foto2.svg" class width="800" height="256" alt="foto-2">
-            </li>
-          </ul>
-				</section>       
-        <!-- 4 -->
-				<section class="reason-grey">
-	        <ul class="reasons-list">
-	        	<li class="reasons-item">
-	        		<h3 class="reason-title">Небольшая площадь</h3>
-	        		<p class="reason-number">№3</p>
-	        		<p class="reason-text">Все достопримечательности находятся очень близко</p>
-	        	</li>
-						<li class="advice-item">
-	        		<h3 class="reason-title">Красивая дорога</h3>
-	        		<p class="reason-number">№4</p>
-	        		<p class="reason-text">Ехать в Седону из Лас-Вегаса совсем не скучно</p>
-	        	</li>
-	        	<li class="advice-item">
-	        		<h3 class="reason-title">Мало туристов</h3>
-	        		<p class="reason-number">№5</p>
-	        		<p class="reason-text">Большинство едет в гранд каньон и толпится там</p>
-	        	</li>
-	        </ul>
-				</section>
-      </article>
-			<section class="search">
-      	<h2 class="search-title">
-      		Заинтересовались?
-      	</h2>
-      	<p class="search-text">
-      		Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне
-      	</p>
-      	<!-- Поиск гостиницы в седоне - это кнопка или ссылка? Сделала пока ссылку -->
-      	<a href="" class="search">Поиск гостиницы в седоне</a> 
+      <section class="search">
+        <h2 class="search-title">
+            Заинтересовались?
+        </h2>
+        <p class="search-text">
+          Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне
+        </p>
+        <button class="button-search" type="button">
+          Поиск гостиницы в седоне
+        </button> 
       </section>
       <section class="form">
-      <!-- Здесь будет форма -->
+        <h3 class="visually-hidden">Форма поиска</h3>
+        <!-- Здесь будет форма -->
       </section>
       <section class="map">
+        <h3 class="visually-hidden">Карта Седоны</h3>
         <!-- Карта. В задании написано незнакомые элементы заключать в span - поэтому так пока -->
-      	<span>map<span>
+        <span>map</span>
       </section>
     </main>
-		</footer class="main-footer">	
-		<!-- это же ссылка? не просто надпись с хештегом? -->
-			<a class="footer-hashtag" href="#">#visitsedona</a>
-   		<ul class="footer-social">
+    <footer class="main-footer">  
+      <p class="footer-hashtag">#visitsedona</p>
+      <ul class="footer-social">
         <li><a class="social-button" href="#">Твиттер</a></li>
         <li><a class="social-button" href="#">Фейсбук</a></li>
         <li><a class="social-button" href="#">Ютуб</a></li>
-       </ul>
+        </ul>
       <div class="footer-copyright">
-      	<p>Website by<p>
-      	<a class="button" href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/html-academy.svg" alt="html-academy" width="115" height="41"></a>
+        <p>Website by<p>
+        <a class="copyright-link" href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/html-academy.svg" alt="html-academy" width="115" height="41"></a>
       </div>
-   	</footer>
+     </footer>
   </body>
 </html>
-
-<!-- 
-1.Самый волнующий меня вопрос: может быть все причины сделать единым списком вообще? Я бы сделала, но я не понимаю, как потом разместятся картинки. И может быть "Жилье-еда-сувениры" тоже в тот же список рекомендаций засунуть? 
-Если лучше все списком - я переделаю
-2.Очень бы хотелось сделать резиновым это все. В этом случае размеры изображений пока не нужно указывать?
-3. Пункт в требованиях: 3.2. Логотип не является пунктом меню. Его нужно размечать отдельным элементом. - т.е. мне нужно из nav вывесли лого? или дотаточно что он не в li?
-
-Я надеюсь я не выгляжу как совсем лошара-лошара)
- -->

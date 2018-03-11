@@ -109,14 +109,43 @@
           Поиск гостиницы в седоне
         </button> 
       </section>
-      <section class="form">
+      <section class="form-search">
         <h3 class="visually-hidden">Форма поиска</h3>
-        <!-- Здесь будет форма -->
+        <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
+          <p class="search-date">
+            <label for="search-date-entry">Дата заезда:</label>
+            <input id="search-date-entry" type="text" name="date-entry" placeholder="24 апреля 2017">
+            <button type="button" class="search-calendar">
+              <img src="img/icon-calendar.svg" width="21" height="22" alt="Календарь">
+            </button>
+          </p>
+          <p class="search-date">
+            <label for="search-date-departure">Дата выезда:</label>
+            <input id="search-date-departure" type="text" name="date-departure" placeholder="4 июля 2017">
+            <button type="button" class="search-calendar">
+              <img src="img/icon-calendar.svg" width="21" height="22" alt="Календарь">
+            </button>
+          </p>
+          <p class="search-number">
+            <label for="search-number-adults">Взрослые:</label>
+            <button type="button" class="number-btn number-btn-minus">-</button>
+            <input id="search-number-adults" type="text" name="search-number-adults" placeholder="2">
+            <button type="button" class="number-btn number-btn-plus">+</button>
+          </p>
+          <p class="search-number">
+            <label for="search-number-children">Дети:</label>
+            <button type="button" class="number-btn number-btn-minus">-</button>
+            <input id="search-number-children" type="text" name="search-number-children" placeholder="0">
+            <button type="button" class="number-btn number-btn-plus">+</button>
+          </p>
+          <button type="submit" class="search-button">Найти</button>
+        </form>
       </section>
       <section class="map">
         <h3 class="visually-hidden">Карта Седоны</h3>
-        <!-- Карта. В задании написано незнакомые элементы заключать в span - поэтому так пока -->
-        <span>map</span>
+        <p>
+          <img src="img/img-map.jpg" width="1200" height="594" alt="Месторасположение Седоны">
+        </p>
       </section>
     </main>
     <footer class="main-footer">  

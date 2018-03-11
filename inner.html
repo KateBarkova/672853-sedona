@@ -22,7 +22,55 @@
       <h1 class="visually-hidden">Отели Седоны</h1> 
       <section class="form">
       	<h2 class="visually-hidden">Форма поиска отеля</h2> 
-        <!-- Тут будет форма -->
+       <!-- Форма -->
+        <form class="filter-form" action="https://echo.htmlacademy.ru" method="post" oninput="minoutput.value=minsum.value">
+          <fieldset>
+            <legend>Инфрастуктура:</legend>
+            <ul class="filter-list">
+              <li class="filter-item">
+                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="pool" id="filter-pool" checked>
+                <label for="filter-pool">Бассейн</label>
+              </li>
+              <li class="filter-item">
+                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="parking" id="filter-parking">
+                <label for="filter-parking">Парковка</label>
+              </li>
+              <li class="filter-item">
+                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="wi-fi" id="filter-wi-fi">
+                <label for="filter-wi-fi">Wi-Fi</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>Тип жилья:</legend>
+            <ul class="filter-list">
+              <li class="filter-item">
+                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="hotel" id="filter-hotel" checked>
+                <label for="filter-hotel">Гостиница</label>
+              </li>
+              <li class="filter-item">
+                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="motel" id="filter-motel" checked>
+                <label for="filter-motel">Мотель</label>
+              </li>
+              <li class="filter-item">
+                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="apartment" id="filter-apartment" checked>
+                <label for="filter-apartment">Апартаменты</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>Стоимость в сутки (Р):</legend>
+            <label for="minsum">от</label>
+            <output name="minoutput">0</output>
+            <label for="maxsum">до</label>
+            <output name="maxoutput">3000</output>
+            <input type="range" min="0" max="3000" id="minsum" name="minsum"> 
+            <input type="range" min="0" max="3000" id="maxsum" name="maxsum"> 
+          </fieldset>
+          <button type="submit" class="filter-button"> 
+            Показать
+          </button>         
+        </form>
       </section>
       <section class="hotel-sorting">
         <h2 class="visually-hidden">Поле сортировки</h2>
@@ -45,10 +93,10 @@
         </ul>
         <ul class="sort-icon-list">
           <li class="sort-icon-item">
-            <img class="sort-icon" src="img/icon-up.svg" alt="Up" width="11" height="10">
+            <img class="sort-icon" src="img/icon-up.svg" alt="От меньшего к большему" width="11" height="10">
           </li> 
           <li class="sort-icon-item">
-            <img class="sort-icon sort-icon-active" src="img/icon-down.svg" alt="Down" width="11" height="10">
+            <img class="sort-icon sort-icon-active" src="img/icon-down.svg" alt="От большего к меньшему" width="11" height="10">
           </li> 
         </ul>        
       </section>
@@ -133,4 +181,3 @@
    	</footer>
   </body>
 </html>
-<!-- <span>&#9733</span> -->

@@ -22,7 +22,67 @@
       <h1 class="visually-hidden">Отели Седоны</h1> 
       <section class="form">
       	<h2 class="visually-hidden">Форма поиска отеля</h2> 
-        <!-- Тут будет форма -->
+       <!-- Форма -->
+        <form class="filter-form" action="https://echo.htmlacademy.ru" method="get">
+          <fieldset>
+            <legend>Инфрастуктура:</legend>
+            <ul class="filter-list">
+              <li class="filter-item">
+                <input class="filter-input-checkbox" type="checkbox" name="pool" id="filter-pool" checked>
+                <label for="filter-pool">Бассейн</label>
+              </li>
+              <li class="filter-item">
+                <input class="filter-input-checkbox" type="checkbox" name="parking" id="filter-parking">
+                <label for="filter-parking">Парковка</label>
+              </li>
+              <li class="filter-item">
+                <input class="filter-input-checkbox" type="checkbox" name="wi-fi" id="filter-wi-fi">
+                <label for="filter-wi-fi">Wi-Fi</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>Тип жилья:</legend>
+            <ul class="filter-list">
+              <li class="filter-item">
+                <input class="filter-input-checkbox" type="checkbox" name="hotel" id="filter-hotel" checked>
+                <label for="filter-hotel">Гостиница</label>
+              </li>
+              <li class="filter-item">
+                <input class="filter-input-checkbox" type="checkbox" name="motel" id="filter-motel" checked>
+                <label for="filter-motel">Мотель</label>
+              </li>
+              <li class="filter-item">
+                <input class="filter-input-checkbox" type="checkbox" name="apartment" id="filter-apartment" checked>
+                <label for="filter-apartment">Апартаменты</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>Стоимость в сутки (Р):</legend>
+            <table class="filter-cost"> 
+              <tr> 
+                <td><label for="min-sum">от</label></td>
+                <td><input type="number" min="0" max="3000" id="min-sum" name="min-sum"></td>
+                <td><label for="max-sum">до</label></td> 
+                <td><input type="number" min="0" max="3000" id="max-sum" name="max-sum"></td>
+              </tr>
+            </table>
+            <div class="filter-range">
+              <div class="filter-line-empty">
+              </div>
+              <div class="filter-line-full">
+              </div>
+              <div class="filter-circle-min">
+              </div>
+              <div class="filter-circle-max">
+              </div>
+            </div>
+          </fieldset>
+          <button type="submit" class="filter-button"> 
+            Показать
+          </button>         
+        </form>
       </section>
       <section class="hotel-sorting">
         <h2 class="visually-hidden">Поле сортировки</h2>
@@ -45,10 +105,14 @@
         </ul>
         <ul class="sort-icon-list">
           <li class="sort-icon-item">
-            <img class="sort-icon" src="img/icon-up.svg" alt="Up" width="11" height="10">
+            <a href="" class="sort-icon-up-link">
+              <img class="sort-icon" src="img/icon-up.svg" alt="От меньшего к большему" width="11" height="10">
+            </a>
           </li> 
           <li class="sort-icon-item">
-            <img class="sort-icon sort-icon-active" src="img/icon-down.svg" alt="Down" width="11" height="10">
+            <a href="" class="sort-icon-down-link">
+              <img class="sort-icon sort-icon-active" src="img/icon-down.svg" alt="От большего к меньшему" width="11" height="10">
+            </a>
           </li> 
         </ul>        
       </section>
@@ -122,9 +186,9 @@
 		<footer class="main-footer">	
 			<p class="footer-hashtag">#visitsedona</p>
    		<ul class="footer-social">
-        <li><a class="social-button" href="#">Твиттер</a></li>
-        <li><a class="social-button" href="#">Фейсбук</a></li>
-        <li><a class="social-button" href="#">Ютуб</a></li>
+        <li><a class="social-button" href="#" aria-label="Твиттер">Твиттер</a></li>
+        <li><a class="social-button" href="#" aria-label="Фейсбук">Фейсбук</a></li>
+        <li><a class="social-button" href="#" aria-label="Ютуб">Ютуб</a></li>
        </ul>
       <div class="footer-copyright">
       	<p>Website by<p>
@@ -133,4 +197,3 @@
    	</footer>
   </body>
 </html>
-<!-- <span>&#9733</span> -->

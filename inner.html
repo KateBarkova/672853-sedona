@@ -23,7 +23,7 @@
       <section class="form">
       	<h2 class="visually-hidden">Форма поиска отеля</h2> 
        <!-- Форма -->
-        <form class="filter-form" action="https://echo.htmlacademy.ru" method="post" oninput="minoutput.value=minsum.value">
+        <form class="filter-form" action="https://echo.htmlacademy.ru" method="get">
           <fieldset>
             <legend>Инфрастуктура:</legend>
             <ul class="filter-list">
@@ -60,12 +60,34 @@
           </fieldset>
           <fieldset>
             <legend>Стоимость в сутки (Р):</legend>
-            <label for="minsum">от</label>
-            <output name="minoutput">0</output>
-            <label for="maxsum">до</label>
-            <output name="maxoutput">3000</output>
-            <input type="range" min="0" max="3000" id="minsum" name="minsum"> 
-            <input type="range" min="0" max="3000" id="maxsum" name="maxsum"> 
+            <label for="min-sum">от</label>
+            <input type="number" min="0" max="3000" id="min-sum" name="min-sum"> 
+            <label for="max-sum">до</label>
+            <input type="number" min="0" max="3000" id="max-sum" name="max-sum"> 
+            <div class="filter-range">
+              <div class="filter-line-empty">
+                <svg width="317" height="20">
+                  <line x1="0" y1="10" x2="317" y2="10" stroke="#ffffff" stroke-opacity="0.3" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="filter-line-full">
+                <svg width="317" height="20">
+                  <line x1="0" y1="10" x2="248" y2="10" stroke="#ffffff" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="filter-circle-min">
+                <svg width="20" height="23" viewBox="0 0 20 23">
+                  <path opacity=".3" fill="#ABABAB" d="M10 20C4.477 20 0 15.522 0 10v2c0 5.522 4.477 10 10 10 5.522 0 10-4.478 10-10v-2c0 5.522-4.478 10-10 10z"/>
+                  <circle fill="#FFF" cx="10" cy="10" r="10"/><circle fill="#ABABAB" cx="10" cy="10" r="2"/>
+                </svg>
+              </div>
+              <div class="filter-circle-max">
+                <svg width="20" height="23" viewBox="0 0 20 23">
+                  <path opacity=".3" fill="#ABABAB" d="M10 20C4.477 20 0 15.522 0 10v2c0 5.522 4.477 10 10 10 5.522 0 10-4.478 10-10v-2c0 5.522-4.478 10-10 10z"/>
+                  <circle fill="#FFF" cx="10" cy="10" r="10"/><circle fill="#ABABAB" cx="10" cy="10" r="2"/>
+                </svg>
+              </div>
+            </div>
           </fieldset>
           <button type="submit" class="filter-button"> 
             Показать
@@ -93,10 +115,14 @@
         </ul>
         <ul class="sort-icon-list">
           <li class="sort-icon-item">
-            <img class="sort-icon" src="img/icon-up.svg" alt="От меньшего к большему" width="11" height="10">
+            <a href="" class="sort-icon-up-link">
+              <img class="sort-icon" src="img/icon-up.svg" alt="От меньшего к большему" width="11" height="10">
+            </a>
           </li> 
           <li class="sort-icon-item">
-            <img class="sort-icon sort-icon-active" src="img/icon-down.svg" alt="От большего к меньшему" width="11" height="10">
+            <a href="" class="sort-icon-down-link">
+              <img class="sort-icon sort-icon-active" src="img/icon-down.svg" alt="От большего к меньшему" width="11" height="10">
+            </a>
           </li> 
         </ul>        
       </section>
@@ -170,9 +196,9 @@
 		<footer class="main-footer">	
 			<p class="footer-hashtag">#visitsedona</p>
    		<ul class="footer-social">
-        <li><a class="social-button" href="#">Твиттер</a></li>
-        <li><a class="social-button" href="#">Фейсбук</a></li>
-        <li><a class="social-button" href="#">Ютуб</a></li>
+        <li><a class="social-button" href="#" aria-label="Твиттер">Твиттер</a></li>
+        <li><a class="social-button" href="#" aria-label="Фейсбук">Фейсбук</a></li>
+        <li><a class="social-button" href="#" aria-label="Ютуб">Ютуб</a></li>
        </ul>
       <div class="footer-copyright">
       	<p>Website by<p>

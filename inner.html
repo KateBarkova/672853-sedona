@@ -28,15 +28,15 @@
             <legend>Инфрастуктура:</legend>
             <ul class="filter-list">
               <li class="filter-item">
-                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="pool" id="filter-pool" checked>
+                <input class="filter-input-checkbox" type="checkbox" name="pool" id="filter-pool" checked>
                 <label for="filter-pool">Бассейн</label>
               </li>
               <li class="filter-item">
-                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="parking" id="filter-parking">
+                <input class="filter-input-checkbox" type="checkbox" name="parking" id="filter-parking">
                 <label for="filter-parking">Парковка</label>
               </li>
               <li class="filter-item">
-                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="wi-fi" id="filter-wi-fi">
+                <input class="filter-input-checkbox" type="checkbox" name="wi-fi" id="filter-wi-fi">
                 <label for="filter-wi-fi">Wi-Fi</label>
               </li>
             </ul>
@@ -45,47 +45,37 @@
             <legend>Тип жилья:</legend>
             <ul class="filter-list">
               <li class="filter-item">
-                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="hotel" id="filter-hotel" checked>
+                <input class="filter-input-checkbox" type="checkbox" name="hotel" id="filter-hotel" checked>
                 <label for="filter-hotel">Гостиница</label>
               </li>
               <li class="filter-item">
-                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="motel" id="filter-motel" checked>
+                <input class="filter-input-checkbox" type="checkbox" name="motel" id="filter-motel" checked>
                 <label for="filter-motel">Мотель</label>
               </li>
               <li class="filter-item">
-                <input class="visually-hidden filter-input-checkbox" type="checkbox" name="apartment" id="filter-apartment" checked>
+                <input class="filter-input-checkbox" type="checkbox" name="apartment" id="filter-apartment" checked>
                 <label for="filter-apartment">Апартаменты</label>
               </li>
             </ul>
           </fieldset>
           <fieldset>
             <legend>Стоимость в сутки (Р):</legend>
-            <label for="min-sum">от</label>
-            <input type="number" min="0" max="3000" id="min-sum" name="min-sum"> 
-            <label for="max-sum">до</label>
-            <input type="number" min="0" max="3000" id="max-sum" name="max-sum"> 
+            <table class="filter-cost"> 
+              <tr> 
+                <td><label for="min-sum">от</label></td>
+                <td><input type="number" min="0" max="3000" id="min-sum" name="min-sum"></td>
+                <td><label for="max-sum">до</label></td> 
+                <td><input type="number" min="0" max="3000" id="max-sum" name="max-sum"></td>
+              </tr>
+            </table>
             <div class="filter-range">
               <div class="filter-line-empty">
-                <svg width="317" height="20">
-                  <line x1="0" y1="10" x2="317" y2="10" stroke="#ffffff" stroke-opacity="0.3" stroke-width="2" />
-                </svg>
               </div>
               <div class="filter-line-full">
-                <svg width="317" height="20">
-                  <line x1="0" y1="10" x2="248" y2="10" stroke="#ffffff" stroke-width="2" />
-                </svg>
               </div>
               <div class="filter-circle-min">
-                <svg width="20" height="23" viewBox="0 0 20 23">
-                  <path opacity=".3" fill="#ABABAB" d="M10 20C4.477 20 0 15.522 0 10v2c0 5.522 4.477 10 10 10 5.522 0 10-4.478 10-10v-2c0 5.522-4.478 10-10 10z"/>
-                  <circle fill="#FFF" cx="10" cy="10" r="10"/><circle fill="#ABABAB" cx="10" cy="10" r="2"/>
-                </svg>
               </div>
               <div class="filter-circle-max">
-                <svg width="20" height="23" viewBox="0 0 20 23">
-                  <path opacity=".3" fill="#ABABAB" d="M10 20C4.477 20 0 15.522 0 10v2c0 5.522 4.477 10 10 10 5.522 0 10-4.478 10-10v-2c0 5.522-4.478 10-10 10z"/>
-                  <circle fill="#FFF" cx="10" cy="10" r="10"/><circle fill="#ABABAB" cx="10" cy="10" r="2"/>
-                </svg>
               </div>
             </div>
           </fieldset>

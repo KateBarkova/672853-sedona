@@ -10,7 +10,6 @@ body {
   text-transform: uppercase;
 
   background-color: #f2f2f2;
-  background-position: top center;
   width: 1200px;
   margin: 0 auto;
 }
@@ -22,7 +21,6 @@ a {
 /*:focus {outline: 0;}*/
 
 .main-navigation {
-  font-size: 16px;
   line-height: 26px;
   background-color: #ffffff;
 }
@@ -31,7 +29,9 @@ a {
 .reasons-list,
 .reasons-foto,
 .footer-social {
-  	list-style: none;
+	margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .site-menu a {
@@ -44,7 +44,7 @@ a {
 }
 
 .site-menu a:active {
-	color: rgba(0, 0, 0, .3);
+	color: rgba(0, 0, 0, 0.3);
 }
 
 .site-menu .menu-link-active {
@@ -54,12 +54,14 @@ a {
 .container {
 	text-align: center;
 }
+
 .mountains {
+	height: 800px;
 	background-image: url("../img/bg-mountain.jpg");
 	background-position: top center;
-  	background-repeat: no-repeat;
-  	height: 800px;
+  background-repeat: no-repeat;
 }
+
 /* На это не смотри пока, у меня не получается вставить эти белые горы
 и отцентровать фото-текст по вертикали =(( ))
 
@@ -72,18 +74,29 @@ a {
 
 } */
 
+.visually-hidden {
+	font-size: 0px;
+}
+
+.sedona-title {
+	font-size: 21px;
+	line-height: 26px;
+}
+
+.sedona-text {
+	font-weight: 400;
+	color: #333333;
+	line-height: 26px;
+}
+
 .reason-title {
 	font-size: 21px;
 }
-.reason-text,
-.reason-number,
-.search-text {
-	color: #333333;
-	font-weight: 400;
-}
 
-.visually-hidden {
-	font-size: 0px;
+.reason-text,
+.reason-number {
+	font-weight: 400;
+	color: #333333;
 }
 
 .reason-item-blue {
@@ -91,15 +104,19 @@ a {
 	background-color: #81b3d2;
 }
 
-.advice-list {
-	 list-style: none;
-	 background-color: #ffffff;
+.reason-item-blue .reason-text,
+.reason-item-blue .reason-number {
+	color: #ffffff;
 }
 
-.last-reasons
- {
-	background-color: #eeeeee;
+.advice-list {
 	list-style: none;
+	background-color: #ffffff;
+}
+
+.last-reasons {
+	list-style: none;
+	background-color: #eeeeee;
 }
 
 .search {
@@ -108,16 +125,24 @@ a {
 
 .search-title {
 	font-size: 30px;
+	line-height: 36px;
+}
+
+.search-text {
+	font-weight: 400;
+	line-height: 24px;
+	color: #333333;
 }
 
 .button-search {
 	font: inherit;
-	background-color: #766357;
 	font-size: 21px;
-	color: #ffffff;
-	border: none;
+	line-height: 26px;
 	text-transform: uppercase;
+	color: #ffffff;
 	vertical-align: middle;
+	background-color: #766357;
+	border: none;
 }
 
 .button-search:hover,
@@ -131,15 +156,16 @@ a {
 }
 
 .search-form {
+	line-height: 26px;
 	background-color: #ffffff;
 }
 
 .search-form input {
-  	font: inherit;
-  	background-color: #f2f2f2;
-  	border: none;
-  	color: #000000;
-  	text-transform: uppercase;
+	font: inherit;
+	text-transform: uppercase;
+	color: #000000;
+	background-color: #f2f2f2;
+	border: none;
 }
 
 .search-form input:hover {
@@ -152,37 +178,37 @@ a {
 
 .search-calendar {
 	font: inherit;
+	vertical-align: middle;
 	background-color: #f2f2f2;
 	border: none;
-	vertical-align: middle;
 }
 
 .number-btn {
 	font: inherit;
-  	background-color: #f2f2f2;
-  	border: none;
-  	color: #a9a9a9;
-  	font-size: 21px;
-  	vertical-align: middle;
+	font-size: 21px;
+	vertical-align: middle;
+	color: #a9a9a9;
+  background-color: #f2f2f2;
+  border: none;
 }
 
 .number-btn:hover,
 .number-btn:focus  {
-  	color: #000000;
+  color: #000000;
 }
 
 .number-btn:active  {
-  	color: #81b3d2;
+  color: #81b3d2;
 }
 
 .search-button {
 	font: inherit;
-	background-color: #81b3d2;
 	font-size: 21px;
-	color: #ffffff;
-	border: none;
 	text-transform: uppercase;
+	color: #ffffff;
 	vertical-align: middle;
+	background-color: #81b3d2;
+	border: none;
 }
 
 .search-button:hover,
@@ -191,42 +217,48 @@ a {
 }
 
 .search-button:active {
+	color: rgba(255, 255, 255, 0.3);
 	background-color: #5496bd;
-	color: rgba(255, 255, 255, 0.3)
 }
 
 .main-footer {
-	background-color: rgbeaa(254, 254, 254, 0.9);
-}
-.footer-hashtag {
-	font-size: 21px
+	background-color: rgba(254, 254, 254, 0.9);
 }
 
-.footer-social a {
+.footer-hashtag {
+	font-size: 21px;
+	line-height: 26px;
+}
+
+.social-button {
+	font-weight: 400;
 	color: #000000;
-	font-weight: 400 
 }
 
 .footer-copyright p {
-	font-weight: 400 
+	font-weight: 400;
+	line-height: 26px;
 }
 
 /*inner*/
+
 .main-inner {
 	background-color: #fefefe;
 }
 
 .form {
+	color: white;
+	height: 400px;
 	background-image: url("../img/bg-form.jpg");
 	background-position: center;
-  	background-repeat: no-repeat;
-  	height: 400px;
-  	color: white;
+	background-repeat: no-repeat;
 }
 
 .form ul,
 .hotel-sorting ul,
 .hotel-list {
+	margin: 0;
+	padding: 0;
 	list-style: none;
 }
 
@@ -244,47 +276,49 @@ a {
 
 .filter-cost input {
 	font: inherit;
+	text-transform: uppercase;
 	color: #ffffff;
-  	background-color: transparent;
-  	border: none;
-  	text-transform: uppercase;
+	background-color: transparent;
+	border: none;
 }
 
 .filter-button {
 	font: inherit;
-	background-color: transparent;
 	font-weight: 400;
-	color: white;
-	border: 2px solid white;
 	text-transform: uppercase;
+	color: white;
 	vertical-align: middle;
+	background-color: transparent;
+	border: 2px solid white;
 }
 
 .filter-button:hover,
 .filter-button:focus {
-	background-color: white;
 	color: black;
+	background-color: white;
 }
 
 .sorting-item-sum {
 	font-size: 21px;
+	line-height: 26px;
 }
 
 .sorting-item {
 	font-size: 12px;
 	font-weight: 400;
+	line-height: 18px;
 }
 
 .hotel-sorting-link {
 	font-size: 12px;
 	font-weight: 400;
-	color: rgba(0,0,0, 0.3);
+	color: rgba(0, 0, 0, 0.3);
 	text-decoration: underline dashed #81b3d2;  
 }
 
 .hotel-sorting-link-active {
-	text-decoration: none;
 	color: #81b3d2;
+	text-decoration: none;
 }
 
 .hotel-sorting-link:hover,
@@ -296,9 +330,11 @@ a {
 	color: #000000;
 	text-decoration: none;
 }
-.hotel-name a {
+
+.hotel-text a {
 	font: inherit;
 	font-size: 21px;
+	line-height: 26px;
 	color: black;
 }
 
@@ -308,7 +344,7 @@ a {
 }
 
 .hotel-name a:active {
-	color: rgba(0, 0, 0, .3);
+	color: rgba(0, 0, 0, 0.3);
 }
 
 .hotel-info {
@@ -316,12 +352,12 @@ a {
 }
 
 .button-hotel {
-	color: white;
 	font-weight: 700;
+	color: white;
 }
 
 .button-hotel-more {
-	background-color: #81b3d2
+	background-color: #81b3d2;
 }
 
 .button-hotel-order {
@@ -334,8 +370,8 @@ a {
 }
 
 .button-hotel-order:active {
-	background-color: #503e33;
 	color: rgba(225, 225, 225, 0.3);
+	background-color: #503e33;
 }
 
 .button-hotel-more:hover,
@@ -347,12 +383,13 @@ a {
 	background-color: #5496bd;
 	color: rgba(225, 225, 225, 0.3);
 }
+
 .hotel-rating {
-	color: #666666;
-	font-weight: 400;
-	background-color: #f2f2f2;
 	width: 110px;
 	height: 27px;
+	font-weight: 400;
+	color: #666666;
 	vertical-align: middle;
 	text-align: center;	
+	background-color: #f2f2f2;
 }

@@ -1,0 +1,778 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+
+  background-color: #f2f2f2;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*:focus {outline: 0;}*/
+
+.main-navigation {
+  line-height: 26px;
+  background-color: #ffffff;
+}
+
+.site-menu,
+.reasons-list,
+.reasons-foto,
+.footer-social {
+	margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-menu a {
+  color: #000000;
+}
+
+.site-menu a:hover,
+.site-menu a:focus {
+	color: #81b3d2;
+}
+
+.site-menu a:active {
+	color: rgba(0, 0, 0, 0.3);
+}
+
+.site-menu .menu-link-active {
+	color: #766357;
+}
+
+.container {
+	text-align: center;
+	background-color: white;
+}
+
+.mountains {
+	
+	background-image: 
+		url("../img/bg-white.png"), 
+		url("../img/bg-mountain.jpg");
+	background-position: bottom center, top center;
+  background-repeat: no-repeat;
+}
+
+/* На это не смотри пока, у меня не получается вставить эти белые горы
+и отцентровать фото-текст по вертикали =(( ))
+
+.mountains::after {
+	content: "";
+	background-image: url("../img/bg-white.png");
+	background-position: top center;
+}
+.mountains img {
+
+} */
+
+.visually-hidden {
+	font-size: 0px;
+	position: absolute;
+}
+
+/*{
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  …
+}*/
+/*.reasons {background-color: red;}
+
+.visually-hidden {background-color: orange;}
+*/
+
+.sedona-title {
+	font-size: 21px;
+	line-height: 26px;
+}
+
+.sedona-text {
+	font-weight: 400;
+	color: #333333;
+	line-height: 26px;
+}
+
+.reason-title {
+	font-size: 21px;
+	margin-top: 0px;
+}
+
+.reason-text,
+.reason-number {
+	font-weight: 400;
+	color: #333333;
+	margin-bottom: 0px;
+}
+
+.reason-item-blue {
+	color: #ffffff;
+	background-color: #81b3d2;
+}
+
+.reason-item-blue .reason-text,
+.reason-item-blue .reason-number {
+	color: #ffffff;
+}
+
+.advice-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	background-color: #ffffff;
+}
+
+.last-reasons {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	background-color: #eeeeee;
+}
+
+.search {
+	background-color: #ffffff;
+}
+
+.search-title {
+	font-size: 30px;
+	line-height: 36px;
+}
+
+.search-text {
+	font-weight: 400;
+	line-height: 24px;
+	color: #333333;
+}
+
+.button-search {
+	width: 568px;
+	height: 86px;
+	font: inherit;
+	font-size: 21px;
+	line-height: 26px;
+	text-transform: uppercase;
+	color: #ffffff;
+	vertical-align: middle;
+	background-color: #766357;
+	border: none;
+}
+
+.button-search:hover,
+.button-search:focus {
+	background-color: #604e43;
+}
+
+.button-search:active {
+	background-color: #503e33;
+	color: rgba(225, 225, 225, 0.3);
+}
+
+.search-form {
+	line-height: 26px;
+	background-color: #ffffff;
+}
+
+.search-form input {
+	font: inherit;
+	text-transform: uppercase;
+	color: #000000;
+	background-color: #f2f2f2;
+	border: none;
+}
+
+.search-form input:hover {
+	background-color: #ebebeb;
+}
+
+.search-form input:focus {
+	background-color: #ffffff;
+}
+
+.search-calendar {
+	font: inherit;
+	vertical-align: middle;
+	background-color: #f2f2f2;
+	border: none;
+}
+
+.number-btn {
+	font: inherit;
+	font-size: 21px;
+	vertical-align: middle;
+	color: #a9a9a9;
+  background-color: #f2f2f2;
+  border: none;
+}
+
+.number-btn:hover,
+.number-btn:focus  {
+  color: #000000;
+}
+
+.number-btn:active  {
+  color: #81b3d2;
+}
+
+.search-button {
+	width: 458px;
+	height: 58px;
+	font: inherit;
+	font-size: 21px;
+	text-transform: uppercase;
+	color: #ffffff;
+	vertical-align: middle;
+	background-color: #81b3d2;
+	border: none;
+	margin-top: 25px;
+}
+
+.search-button:hover,
+.search-button:focus {
+	background-color: #669ec0;
+}
+
+.search-button:active {
+	color: rgba(255, 255, 255, 0.3);
+	background-color: #5496bd;
+}
+
+.main-footer {
+	background-color: rgba(254, 254, 254, 0.9);
+}
+
+.footer-hashtag {
+	font-size: 21px;
+	line-height: 26px;
+}
+
+.social-button {
+	font-weight: 400;
+	color: #000000;
+}
+
+.footer-copyright p {
+	font-weight: 400;
+	line-height: 26px;
+}
+
+/*inner*/
+
+.main-inner {
+	background-color: #fefefe;
+}
+
+.form {
+	color: white;
+	height: 220px;
+	background-image: url("../img/bg-form.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.form ul,
+.hotel-sorting ul,
+.hotel-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.filter-form legend {
+	font-size: 16px;
+}
+
+ .filter-item label {
+	font-weight: 400;
+}
+
+.filter-cost {
+	font-weight: 400;
+}
+
+.filter-cost input {
+	font: inherit;
+	text-transform: uppercase;
+	color: #ffffff;
+	background-color: transparent;
+	border: none;
+}
+
+.filter-button {
+	font: inherit;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: white;
+	vertical-align: middle;
+	background-color: transparent;
+	border: 2px solid white;
+}
+
+.filter-button:hover,
+.filter-button:focus {
+	color: black;
+	background-color: white;
+}
+
+.sorting-item-sum {
+	font-size: 21px;
+	line-height: 26px;
+}
+
+.sorting-item {
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 18px;
+}
+
+.hotel-sorting-link {
+	font-size: 12px;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.3);
+	text-decoration: underline dashed #81b3d2;  
+}
+
+.hotel-sorting-link-active {
+	color: #81b3d2;
+	text-decoration: none;
+}
+
+.hotel-sorting-link:hover,
+.hotel-sorting-link:focus {
+	color: #81b3d2;
+}
+
+.hotel-sorting-link:active {
+	color: #000000;
+	text-decoration: none;
+}
+
+.hotel-name {
+	font: inherit;
+	font-size: 21px;
+	line-height: 26px;
+	font-weight: 700;
+	color: black;
+
+}
+
+.hotel-name a:hover,
+.hotel-name a:focus {
+	color: #81b3d2;
+}
+
+.hotel-name a:active {
+	color: rgba(0, 0, 0, 0.3);
+}
+
+.hotel-info {
+	font-weight: 400;
+}
+
+.button-hotel {
+	font-weight: 700;
+	text-align: center;
+	color: white;
+	display: inline-block;
+	vertical-align: middle;
+	/*почему здесь не срабатывает это выравнивание, не понимаю((*/
+}
+
+.button-hotel-more {
+	background-color: #81b3d2;
+	width: 110px;
+	height: 27px;
+}
+
+.button-hotel-order {
+	background-color: #766357;
+	width: 142px;
+	height: 27px;
+}
+
+.button-hotel-order:hover,
+.button-hotel-order:focus {
+	background-color: #604e43;
+}
+
+.button-hotel-order:active {
+	color: rgba(225, 225, 225, 0.3);
+	background-color: #503e33;
+}
+
+.button-hotel-more:hover,
+.button-hotel-more:focus {
+	background-color: #669ec0;
+}
+
+.button-hotel-more:active {
+	background-color: #5496bd;
+	color: rgba(225, 225, 225, 0.3);
+}
+
+.hotel-rating {
+	width: 110px;
+	height: 27px;
+	font-weight: 400;
+	color: #666666;
+	vertical-align: middle;
+	text-align: center;	
+	background-color: #f2f2f2;
+}
+
+/*Разметка*/
+
+.site-menu {
+	display: flex;
+	justify-content: space-between;
+}
+
+.menu-item {
+	align-content: center;
+	padding: 15px;
+}
+
+.menu-item:nth-child(4) {
+	margin-right: 6%;
+}
+
+.menu-item:nth-child(1) {
+	margin-left: 6%;
+}
+
+.menu-item:nth-child(2) {
+	margin-right: 10%;
+}
+
+.menu-item:nth-child(3) {
+	margin-left: 10%;
+}
+
+.main-header-logo {
+	display: block;
+	width: 138px;
+	height: 70px;
+	position: absolute;
+	transform: translateX(-50%);
+	left: 50%;
+}
+
+.mountains {
+	padding-top: 75px;
+	padding-bottom: 80px;
+	margin-bottom: 65px;
+}
+
+.container-intro {
+	max-width: 600px;
+	margin: 0 auto;
+	margin-bottom: 55px;
+}
+
+.sedona-title {
+	margin-bottom: 35px;
+}
+
+.reasons-foto {
+	display: flex;
+}
+
+.foto1, .foto2 {
+	display: block;
+}
+
+.container-text {
+	margin: 45px 60px 60px 60px;
+}
+
+.reason-title {
+	max-width: 151px;
+	margin: 0 auto;
+}
+
+.reason-title, .reason-number, .reason-text {
+	margin-bottom: 21px;
+}
+
+.advice-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.advice-item {
+	padding-top: 120px;
+	max-width: 33%;
+}
+
+.last-reasons {
+	display: flex;
+	justify-content: space-between;
+}
+
+.last-reasons-item {
+	max-width: 33%
+}
+
+.search-container {
+	margin: 55px auto;
+	max-width: 450px;
+}
+
+.search-title {
+	margin: 0 auto;
+	margin-bottom: 35px;
+}
+
+.search-text {
+	margin: 0 auto;
+}
+
+.search-form {
+	width: 568px;
+	height: 385px;
+	margin: 0 auto;
+	padding: 55px 60px;
+	box-sizing: border-box;
+	background-color: yellow;
+	/*пусть пока желтое, ладно? Не могу понять как убрать маленькие
+	отступы между кнопкой + - и инпутом И еще я button-container
+	сделала спаном. Потому что когда я его делаю дивом, у меня почему-то 
+	не работает флекс. Все логову сломала, не понимаю. И.е. как бЭ этот
+	див вообще отдельно становится =( И вообще какое-то выравнивание 
+	я сделала кривое в форме. Модет я не то сделала флексами вообще?
+	Посмотри, пжл*/
+}
+
+.search-date {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+
+.search-date input {
+	width: 330px; 
+	height: 38px; 
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	padding-left: 5px; 
+} 
+
+.search-calendar {
+	position: absolute;
+	transform: translateY(-50%);
+	top: 55%;
+	right: 0;
+}
+
+.search-number input {
+	width: 38px; 
+	height: 38px; 
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	text-align: right;
+} 
+
+.search-number {
+	display: flex;
+	justify-content: space-between;
+	min-width: 50%;
+	align-items: center;
+}
+
+.number-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.number-btn {
+	width: 38px; 
+	height: 38px; 
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	vertical-align: top;
+}
+
+.search-number:last-child {
+	padding-left: 45px; 
+	box-sizing: border-box;
+}
+
+.search-form p {
+	margin: 0;
+	margin-bottom: 25px;
+}
+
+.map p {
+	padding: 0; 
+	margin: 0;}
+
+.main-footer {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 20px 0;
+	margin: 0px;
+}
+
+.footer-copyright  {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer-social  {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.social-button {
+	display: block;
+	background-color: #81b3d2; 
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 46px;
+	height: 48px;
+	margin-right: 5px;
+	font-size: 0;
+}
+/*тут у меня селектор слишком длинный получается. Можно сделать у li класс,
+а у ссылки убрать? */
+
+.footer-social li:first-child .social-button {
+	background-image: url("../img/icon-twitter.svg");
+}
+
+.footer-social li:nth-child(2) .social-button {
+	background-image: url("../img/icon-fb.svg");
+}
+
+.footer-social li:last-child .social-button {
+	background-image: url("../img/icon-youtube.svg");
+	margin-right: 0px;
+}
+
+.social-button:hover, .social-button:focus {
+	background-color: #669ec0; 
+}
+
+.social-button:active {
+/*не понимаю, как здесь применить opacity к svg =()  эти картинки вставляем
+фоном - нормально? Или нужно в html вставить?*/
+	background-color: #5496bd; 
+}
+
+.copyright-link {
+	margin-left: 10px;
+}
+
+/*inner-разметка*/
+
+.filter-form {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 6%;
+}
+
+.filter-item {
+	margin-top: 30px;
+}
+
+.filter-form fieldset {
+	border: none;
+}
+
+.second-column {
+	margin-left: 100px;
+	margin-right: auto;
+}
+
+.last-column-form {
+	min-width: 330px;
+}
+
+.filter-button {
+	width: 133px;
+	height: 32px;
+}
+
+.sorting-list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+}
+
+.hotel-sorting {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 6%;
+
+}
+
+.sorting-item-sum, 
+.sorting-list, 
+.sorting-item, 
+.hotel-name {
+	padding: 0;
+	margin: 0;
+}
+
+.sorting-list {
+	min-width: 50%
+}
+
+.sort-icon-item {
+	display: inline-block;
+}
+
+.hotel-item {
+	display: flex;
+	justify-content: space-between;
+	padding: 30px 6%;
+}
+.hotel-info {
+	display: flex;
+}
+
+.hotel-text {
+	margin-left: 30px;
+}
+
+.hotel-text span {
+	display: inline-block;
+}
+
+.hotel-name, .hotel-about {
+	margin-bottom: 8px;
+}
+
+.hotel-rank {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.hotel-rank p {
+	margin: 0
+}

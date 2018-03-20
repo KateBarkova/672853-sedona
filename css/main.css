@@ -18,9 +18,27 @@ a {
   text-decoration: none;
 }
 
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 /*:focus {outline: 0;}*/
 
 .main-navigation {
+	padding: 0 6%;
   line-height: 26px;
   background-color: #ffffff;
 }
@@ -32,6 +50,37 @@ a {
 	margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.site-menu {
+	display: flex;
+	justify-content: space-between;
+	max-width: 1200px;
+	flex-wrap: wrap;
+}
+
+.menu-item  {
+  padding: 15px 0;
+ 	flex-basis: 20%;
+}
+
+.menu-item:nth-child(3) {
+	margin-left: 11%;
+	text-align: right;
+}
+
+.menu-item:nth-child(4) {
+	text-align: right;
+}
+
+.main-header-logo {
+	display: block;
+	width: 138px;
+	height: 70px;
+	position: absolute;
+	transform: translateX(-50%);
+	left: 50%;
+	z-index: 100;
 }
 
 .site-menu a {
@@ -57,45 +106,50 @@ a {
 }
 
 .mountains {
-	
+	position: relative;
+	width: 1200px;
+	padding-top: 76px;
+	padding-bottom: 75px;
+	margin-bottom: 60px;
 	background-image: 
 		url("../img/bg-white.png"), 
 		url("../img/bg-mountain.jpg");
-	background-position: bottom center, top center;
+	background-position: bottom center, center -55px;
   background-repeat: no-repeat;
 }
-
-/* На это не смотри пока, у меня не получается вставить эти белые горы
-и отцентровать фото-текст по вертикали =(( ))
-
-.mountains::after {
+/*нарисовала я эти фигулины border-ом. Вопрос: если будет потом 
+резиновая верстка, ширина границы в % у меня не задается - что делать?)*/
+.mountains:after {
 	content: "";
-	background-image: url("../img/bg-white.png");
-	background-position: top center;
-}
-.mountains img {
-
-} */
-
-.visually-hidden {
-	font-size: 0px;
 	position: absolute;
+	box-sizing: border-box;
+	border-top: 57px solid transparent;
+	border-right: 600px solid red;
+	border-left: 600px solid red;
+	bottom: 0;
+	left: 0;
 }
 
-/*{
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  …
-}*/
-/*.reasons {background-color: red;}
+.mountains:before {
+	content: "";
+	position: absolute;
+	box-sizing: border-box;
+	border-top: 57px solid transparent;
+	border-right: 350px solid orange;
+	border-left: 350px solid orange;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
 
-.visually-hidden {background-color: orange;}
-*/
+.container-intro {
+	max-width: 600px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
 
 .sedona-title {
+	margin-bottom: 30px;
 	font-size: 21px;
 	line-height: 26px;
 }
@@ -111,14 +165,59 @@ a {
 	margin-top: 0px;
 }
 
+.reasons-foto {
+	display: flex;
+}
+
+.container-text {
+	margin: 45px 60px 60px 60px;
+}
+
+.reason-title {
+	max-width: 151px;
+	margin: 0 auto;
+}
+
+.reason-title {
+	margin: 0 auto;
+	margin-bottom: 25px;
+}
+
 .reason-text,
 .reason-number {
 	font-weight: 400;
 	color: #333333;
-	margin-bottom: 0px;
+	margin: 0;
+}
+
+.reason-number {
+	margin-bottom: 25px;
+	position: relative;
+}
+
+.reason-number:before {
+	content: "";
+	position: absolute;
+	top: 9px;
+	left: 115px;
+	width: 8px;
+	height: 2px;
+	background-color: #333333;
+}
+
+.reason-number:after {
+	content: "";
+	position: absolute;
+	top: 9px;
+	right: 115px;
+	width: 8px;
+	height: 2px;
+	background-color: #333333;
 }
 
 .reason-item-blue {
+	flex-basis: 33%;
+	flex-grow: 1;
 	color: #ffffff;
 	background-color: #81b3d2;
 }
@@ -128,30 +227,104 @@ a {
 	color: #ffffff;
 }
 
+.reason-item-blue .reason-number:before,
+.reason-item-blue .reason-number:after {
+	background-color: #ffffff;
+}
+
+.foto {
+	display: block;
+	position: relative;
+	top: -80px;
+}
+/*у меня фото сохранено большое - для резиновой верстки.
+Как без явного указания высоты сделать так, чтобы у меня блок не удлинялся
+по высоте фото - не понимаю( И когда резина - там же ж высота меняется*/
+
+.reason-foto {
+	height: 256px;
+	flex-basis: 66%;
+	overflow: hidden;
+	flex-grow: 1;
+}
+
 .advice-list {
+	display: flex;
+	justify-content: space-between;
 	padding: 0;
 	margin: 0;
+	padding-top: 60px;
 	list-style: none;
 	background-color: #ffffff;
 }
 
+.advice-item {
+	max-width: 33%;
+	position: relative;
+	padding-top: 55px;
+	padding-bottom: 25px;
+}
+
+.advice-item:first-child:before {
+	content: "";
+	position: absolute;
+	background: url("../img/icon-accommodation.svg") no-repeat;
+	width: 75px;
+	height: 75px;
+	bottom: 195px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.advice-item:nth-child(2):before {
+	content: "";
+	position: absolute;
+	background: url("../img/icon-food.svg") no-repeat;
+	width: 75px;
+	height: 75px;
+	bottom: 195px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.advice-item:last-child:before {
+	content: "";
+	position: absolute;
+	background: url("../img/icon-souvenirs.svg") no-repeat;
+	width: 75px;
+	height: 75px;
+	bottom: 200px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
 .last-reasons {
+	display: flex;
+	justify-content: space-between;
 	padding: 0;
 	margin: 0;
 	list-style: none;
 	background-color: #eeeeee;
 }
 
-.search {
-	background-color: #ffffff;
+.last-reasons-item {
+	flex-basis: 33%;
+}
+
+.search-container {
+	margin: 50px auto 45px;
+	max-width: 450px;
 }
 
 .search-title {
+	margin: 0 auto;
+	margin-bottom: 25px;
 	font-size: 30px;
 	line-height: 36px;
 }
 
 .search-text {
+	margin: 0 auto;
 	font-weight: 400;
 	line-height: 24px;
 	color: #333333;
@@ -181,8 +354,26 @@ a {
 }
 
 .search-form {
-	line-height: 26px;
+	max-width: 568px;
+	padding: 55px 55px;
+	box-sizing: border-box;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
 	background-color: #ffffff;
+	line-height: 26px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.search-form p {
+	margin: 0;
+	margin-bottom: 30px;
+}
+
+.search-form .search-date {
+	margin-bottom: 30px;
 }
 
 .search-form input {
@@ -201,17 +392,51 @@ a {
 	background-color: #ffffff;
 }
 
+.search-date {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+
+.search-date input {
+	width: 346px; 
+	height: 38px; 
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	padding-left: 10px; 
+} 
+
 .search-calendar {
+	position: absolute;
+	transform: translateY(-50%);
+	top: 55%;
+	right: 0;
 	font: inherit;
 	vertical-align: middle;
 	background-color: #f2f2f2;
 	border: none;
 }
 
+.button-container input {
+	width: 38px; 
+	height: 38px; 
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	text-align: right;
+} 
+
 .number-btn {
+	width: 38px; 
+	height: 38px; 
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	vertical-align: top;
 	font: inherit;
-	font-size: 21px;
-	vertical-align: middle;
+	font-size: 26px;
 	color: #a9a9a9;
   background-color: #f2f2f2;
   border: none;
@@ -224,6 +449,27 @@ a {
 
 .number-btn:active  {
   color: #81b3d2;
+}
+
+.number-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.search-number {
+	display: flex;
+	justify-content: space-between;
+	flex-grow: 1;
+	align-items: center;
+}
+
+.button-container {
+	display: flex;
+}
+
+.search-number:last-child {
+	padding-left: 60px;
 }
 
 .search-button {
@@ -249,7 +495,20 @@ a {
 	background-color: #5496bd;
 }
 
+.map p {
+	padding: 0; 
+	margin: 0;
+	max-height: 473px;
+	overflow: hidden;
+}
+/*не понимаю как элементы выровнены в футере. В % никак не подберу(
+какие-то кривые там отступы(*/
 .main-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 100px 20px 130px;
+	margin: 0px;
 	background-color: rgba(254, 254, 254, 0.9);
 }
 
@@ -258,14 +517,74 @@ a {
 	line-height: 26px;
 }
 
+.footer-social  {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .social-button {
+	display: block;
+	background-color: #81b3d2; 
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 46px;
+	height: 48px;
+	margin-right: 5px;
+	font-size: 0;
 	font-weight: 400;
 	color: #000000;
+}
+
+/*тут у меня селектор слишком длинный получается. Можно сделать у li класс,
+а у ссылки убрать? */
+
+.footer-social li:first-child .social-button {
+	background-image: url("../img/icon-twitter.svg");
+}
+
+.footer-social li:nth-child(2) .social-button {
+	background-image: url("../img/icon-fb.svg");
+}
+
+.footer-social li:last-child .social-button {
+	background-image: url("../img/icon-youtube.svg");
+	margin-right: 0px;
+}
+
+.social-button:hover, .social-button:focus {
+	background-color: #669ec0; 
+}
+
+.social-button:active {
+	opacity: 0.3;
+/*не понимаю, как здесь применить opacity к svg =()  эти картинки вставляем
+фоном - нормально? Или нужно в html вставить?*/
+	background-color: #5496bd; 
+}
+
+.footer-copyright  {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .footer-copyright p {
 	font-weight: 400;
 	line-height: 26px;
+}
+
+.copyright-link {
+	margin-left: 10px;
+}
+
+.copyright-link:hover path,
+.copyright-link:focus path {
+	fill: #81b3d2;
+}
+
+.copyright-link:active path {
+	fill: #bdbbbc;
 }
 
 /*inner*/
@@ -294,12 +613,60 @@ a {
 	font-size: 16px;
 }
 
- .filter-item label {
+.filter-item label {
+	display: block;
+	position: relative;
+	padding-left: 40px;
 	font-weight: 400;
+}
+
+.filter-input-checkbox {
+	display: none;
+}
+
+/*как их заставить работать-то?))) и у меня опять вложенность селекторов
+три штуки тут, а надо максимум две. добавлять классы? переименовывать?
+Чем в стайл гайде отличается состояние покой-наведение - не поняла
+И еще, в каких случаях у меня оно заблокировано будет?
+это отдельный класс сделать нужно или что?( */
+
+.filter-item label:before {
+	content: "";
+	position: absolute;
+	width: 27px;
+	height: 23px;
+	background-image: url("../img/icon-checkbox-on.svg");
+	background-repeat: no-repeat;
+	left: 0px;
+}
+
+.first-column .filter-item:nth-child(2) label:before,
+.first-column .filter-item:nth-child(3) label:before {
+	content: "";
+	position: absolute;
+	width: 27px;
+	height: 23px;
+	background-image: url("../img/icon-checkbox-off.svg");
+	background-repeat: no-repeat;
+	left: 0px;
+}
+
+.last-column-form legend {
+	margin-bottom: 10px;
 }
 
 .filter-cost {
 	font-weight: 400;
+	border: 2px solid white;
+	width: 320px;
+	height: 35px;
+	border-radius: 2px;
+	margin-bottom: 60px;
+}
+
+.filter-cost td {
+	text-align: right;
+	width: 80px;
 }
 
 .filter-cost input {
@@ -308,22 +675,78 @@ a {
 	color: #ffffff;
 	background-color: transparent;
 	border: none;
+	margin: 0;
+	padding: 0;
+	width: 80px;
 }
 
 .filter-button {
+	width: 133px;
+	height: 32px;
+	background-color: transparent;
+	border: 2px solid white;
+	display: block;
+	margin: 0 auto;
 	font: inherit;
 	font-weight: 400;
 	text-transform: uppercase;
 	color: white;
 	vertical-align: middle;
-	background-color: transparent;
-	border: 2px solid white;
 }
 
 .filter-button:hover,
 .filter-button:focus {
 	color: black;
 	background-color: white;
+}
+
+.filter-form {
+	display: flex;
+	justify-content: space-between;
+	padding: 27px 6%;
+}
+
+.filter-item {
+	margin-top: 25px;
+}
+
+.filter-form fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+.second-column, 
+.first-column {
+	flex-basis: 255px;
+}
+
+.last-column-form {
+	margin-left: auto;
+}
+
+.sorting-item-sum, 
+.sorting-list, 
+.sorting-item, 
+.hotel-name {
+	padding: 0;
+	margin: 0;
+}
+
+.hotel-sorting {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 6%;
+}
+
+.sorting-list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+	min-width: 50%
 }
 
 .sorting-item-sum {
@@ -359,13 +782,22 @@ a {
 	text-decoration: none;
 }
 
+.sort-icon-item {
+	display: inline-block;
+}
+
+.hotel-item {
+	display: flex;
+	justify-content: space-between;
+	padding: 30px 6%;
+}
+
 .hotel-name {
 	font: inherit;
 	font-size: 21px;
 	line-height: 26px;
 	font-weight: 700;
 	color: black;
-
 }
 
 .hotel-name a:hover,
@@ -379,6 +811,19 @@ a {
 
 .hotel-info {
 	font-weight: 400;
+	display: flex;
+}
+
+.hotel-text {
+	margin-left: 30px;
+}
+
+.hotel-text span {
+	display: inline-block;
+}
+
+.hotel-name, .hotel-about {
+	margin-bottom: 8px;
 }
 
 .button-hotel {
@@ -432,342 +877,6 @@ a {
 	background-color: #f2f2f2;
 }
 
-/*Разметка*/
-
-.site-menu {
-	display: flex;
-	justify-content: space-between;
-	max-width: 1200px;
-}
-/*не полуается у меня блоки разместить так, чтобы они совпадали с макетом(*/
-.menu-item  {
-	align-content: center;
-	padding: 15px 0;
- 	max-width: 20%;
-}
-
-.menu-item:nth-child(4) {
-	margin-right: 6%;
-}
-
-.menu-item:nth-child(1) {
-	margin-left: 6%;
-}
-
-.menu-item:nth-child(2) {
-	margin-right: 8%
-}
-
-.menu-item:nth-child(3) {
-	margin-left: 8%;
-}
-
-.main-header-logo {
-	display: block;
-	width: 138px;
-	height: 70px;
-	position: absolute;
-	transform: translateX(-50%);
-	left: 50%;
-}
-
-.mountains {
-	padding-top: 75px;
-	padding-bottom: 80px;
-	margin-bottom: 65px;
-}
-
-.container-intro {
-	max-width: 600px;
-	margin: 0 auto;
-	margin-bottom: 55px;
-}
-
-.sedona-title {
-	margin-bottom: 35px;
-}
-
-.reasons-foto {
-	display: flex;
-}
-
-.foto1, .foto2 {
-	display: block;
-}
-
-.container-text {
-	margin: 45px 60px 60px 60px;
-}
-
-.reason-title {
-	max-width: 151px;
-	margin: 0 auto;
-}
-
-.reason-title, .reason-number, .reason-text {
-	margin-bottom: 21px;
-}
-
-.advice-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.advice-item {
-	padding-top: 120px;
-	max-width: 33%;
-}
-
-.last-reasons {
-	display: flex;
-	justify-content: space-between;
-}
-
-.last-reasons-item {
-	max-width: 33%
-}
-
-.search-container {
-	margin: 55px auto;
-	max-width: 450px;
-}
-
-.search-title {
-	margin: 0 auto;
-	margin-bottom: 35px;
-}
-
-.search-text {
-	margin: 0 auto;
-}
-
-.search-form {
-	width: 568px;
-	height: 385px;
-	margin: 0 auto;
-	padding: 55px 60px;
-	box-sizing: border-box;
-	background-color: yellow;
-	/*пусть пока желтое, ладно? Не могу понять как убрать маленькие
-	отступы между кнопкой + - и инпутом И еще я button-container
-	сделала спаном. Потому что когда я его делаю дивом, у меня почему-то 
-	не работает флекс. Все голову сломала, не понимаю. И.е. как бЭ этот
-	див вообще отдельно становится =( И вообще какое-то выравнивание 
-	я сделала кривое в форме. Может я не то сделала флексами вообще?
-	Посмотри, пжл*/
-}
-
-.search-date {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: relative;
-}
-
-.search-date input {
-	width: 330px; 
-	height: 38px; 
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-	padding-left: 5px; 
-} 
-
-.search-calendar {
-	position: absolute;
-	transform: translateY(-50%);
-	top: 55%;
-	right: 0;
-}
-
-.search-number input {
-	width: 38px; 
-	height: 38px; 
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-	text-align: right;
-} 
-
-.search-number {
-	display: flex;
-	justify-content: space-between;
-	min-width: 50%;
-	align-items: center;
-}
-
-.number-container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.number-btn {
-	width: 38px; 
-	height: 38px; 
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-	vertical-align: top;
-}
-
-.search-number:last-child {
-	padding-left: 45px; 
-	box-sizing: border-box;
-}
-
-.search-form p {
-	margin: 0;
-	margin-bottom: 25px;
-}
-
-.map p {
-	padding: 0; 
-	margin: 0;}
-
-.main-footer {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	padding: 20px 0;
-	margin: 0px;
-}
-
-.footer-copyright  {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.footer-social  {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.social-button {
-	display: block;
-	background-color: #81b3d2; 
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 46px;
-	height: 48px;
-	margin-right: 5px;
-	font-size: 0;
-}
-/*тут у меня селектор слишком длинный получается. Можно сделать у li класс,
-а у ссылки убрать? */
-
-.footer-social li:first-child .social-button {
-	background-image: url("../img/icon-twitter.svg");
-}
-
-.footer-social li:nth-child(2) .social-button {
-	background-image: url("../img/icon-fb.svg");
-}
-
-.footer-social li:last-child .social-button {
-	background-image: url("../img/icon-youtube.svg");
-	margin-right: 0px;
-}
-
-.social-button:hover, .social-button:focus {
-	background-color: #669ec0; 
-}
-
-.social-button:active {
-/*не понимаю, как здесь применить opacity к svg =()  эти картинки вставляем
-фоном - нормально? Или нужно в html вставить?*/
-	background-color: #5496bd; 
-}
-
-.copyright-link {
-	margin-left: 10px;
-}
-
-/*inner-разметка*/
-
-.filter-form {
-	display: flex;
-	justify-content: space-between;
-	padding: 20px 6%;
-}
-
-.filter-item {
-	margin-top: 30px;
-}
-
-.filter-form fieldset {
-	border: none;
-}
-
-.second-column {
-	margin-left: 100px;
-	margin-right: auto;
-}
-
-.last-column-form {
-	min-width: 330px;
-}
-
-.filter-button {
-	width: 133px;
-	height: 32px;
-}
-
-.sorting-list {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0;
-	margin: 0;
-}
-
-.hotel-sorting {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 30px 6%;
-
-}
-
-.sorting-item-sum, 
-.sorting-list, 
-.sorting-item, 
-.hotel-name {
-	padding: 0;
-	margin: 0;
-}
-
-.sorting-list {
-	min-width: 50%
-}
-
-.sort-icon-item {
-	display: inline-block;
-}
-
-.hotel-item {
-	display: flex;
-	justify-content: space-between;
-	padding: 30px 6%;
-}
-.hotel-info {
-	display: flex;
-}
-
-.hotel-text {
-	margin-left: 30px;
-}
-
-.hotel-text span {
-	display: inline-block;
-}
-
-.hotel-name, .hotel-about {
-	margin-bottom: 8px;
-}
-
 .hotel-rank {
 	display: flex;
 	flex-direction: column;
@@ -776,5 +885,6 @@ a {
 }
 
 .hotel-rank p {
-	margin: 0
+	margin: 0;
 }
+

@@ -1,17 +1,13 @@
 body {
   margin: 0;
   padding: 0;
-
+	background-color: #f2f2f2; 
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 14px;
   line-height: 21px;
   font-weight: 700;
   color: #000000;
   text-transform: uppercase;
-
-  background-color: #f2f2f2;
-  width: 1200px;
-  margin: 0 auto;
 }
 
 a {
@@ -22,20 +18,25 @@ a {
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden {
   position: absolute;
-
   width: 1px;
   height: 1px;
   margin: -1px;
   border: 0;
   padding: 0;
-
   white-space: nowrap;
-
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
 /*:focus {outline: 0;}*/
+
+.main-container {
+	width: 1200px;
+	margin: 0 auto;
+	box-shadow: 0 0 15px 0 rgba(0, 1, 1, 0.2);
+	position: relative;
+}
 
 .main-navigation {
 	padding: 0 6%;
@@ -85,6 +86,7 @@ input[type="radio"].visually-hidden {
 
 .site-menu a {
   color: #000000;
+  cursor: pointer;
 }
 
 .site-menu a:hover,
@@ -107,7 +109,7 @@ input[type="radio"].visually-hidden {
 
 .mountains {
 	position: relative;
-	width: 1200px;
+	width: 100%;
 	padding-top: 76px;
 	padding-bottom: 75px;
 	margin-bottom: 60px;
@@ -119,6 +121,7 @@ input[type="radio"].visually-hidden {
 }
 /*нарисовала я эти фигулины border-ом. Вопрос: если будет потом 
 резиновая верстка, ширина границы в % у меня не задается - что делать?)*/
+
 .mountains:after {
 	content: "";
 	position: absolute;
@@ -145,11 +148,12 @@ input[type="radio"].visually-hidden {
 .container-intro {
 	max-width: 600px;
 	margin: 0 auto;
-	margin-bottom: 50px;
+	margin-bottom: 51px;
+	outline: 1px solid red;
 }
 
 .sedona-title {
-	margin-bottom: 30px;
+	margin-bottom: 28px;
 	font-size: 21px;
 	line-height: 26px;
 }
@@ -167,10 +171,13 @@ input[type="radio"].visually-hidden {
 
 .reasons-foto {
 	display: flex;
+	align-items: flex-start;
 }
 
 .container-text {
-	margin: 45px 60px 60px 60px;
+	margin: 49px auto 60px auto;
+	max-width: 280px;
+	outline: 1px solid red;
 }
 
 .reason-title {
@@ -191,7 +198,7 @@ input[type="radio"].visually-hidden {
 }
 
 .reason-number {
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 	position: relative;
 }
 
@@ -216,6 +223,7 @@ input[type="radio"].visually-hidden {
 }
 
 .reason-item-blue {
+	display: block;
 	flex-basis: 33%;
 	flex-grow: 1;
 	color: #ffffff;
@@ -235,8 +243,9 @@ input[type="radio"].visually-hidden {
 .foto {
 	display: block;
 	position: relative;
-	top: -80px;
+	top: -78px;
 }
+
 /*у меня фото сохранено большое - для резиновой верстки.
 Как без явного указания высоты сделать так, чтобы у меня блок не удлинялся
 по высоте фото - не понимаю( И когда резина - там же ж высота меняется*/
@@ -253,16 +262,18 @@ input[type="radio"].visually-hidden {
 	justify-content: space-between;
 	padding: 0;
 	margin: 0;
-	padding-top: 60px;
+	margin-top: 52px;
+	margin-bottom: 23px;
 	list-style: none;
 	background-color: #ffffff;
 }
 
 .advice-item {
-	max-width: 33%;
+	flex-basis: 33%;
+	flex-grow: 1;
 	position: relative;
-	padding-top: 55px;
-	padding-bottom: 25px;
+	padding-top: 60px;
+	outline: 1px solid red;
 }
 
 .advice-item:first-child:before {
@@ -271,7 +282,7 @@ input[type="radio"].visually-hidden {
 	background: url("../img/icon-accommodation.svg") no-repeat;
 	width: 75px;
 	height: 75px;
-	bottom: 195px;
+	bottom: 172px;
 	left: 50%;
 	transform: translateX(-50%);
 }
@@ -282,9 +293,9 @@ input[type="radio"].visually-hidden {
 	background: url("../img/icon-food.svg") no-repeat;
 	width: 75px;
 	height: 75px;
-	bottom: 195px;
+	bottom: 171px;
 	left: 50%;
-	transform: translateX(-50%);
+	transform: translateX(-51%);
 }
 
 .advice-item:last-child:before {
@@ -293,9 +304,9 @@ input[type="radio"].visually-hidden {
 	background: url("../img/icon-souvenirs.svg") no-repeat;
 	width: 75px;
 	height: 75px;
-	bottom: 200px;
+	bottom: 175px;
 	left: 50%;
-	transform: translateX(-50%);
+	transform: translateX(-43%);
 }
 
 .last-reasons {
@@ -312,7 +323,7 @@ input[type="radio"].visually-hidden {
 }
 
 .search-container {
-	margin: 50px auto 45px;
+	margin: 53px auto 45px;
 	max-width: 450px;
 }
 
@@ -341,6 +352,7 @@ input[type="radio"].visually-hidden {
 	vertical-align: middle;
 	background-color: #766357;
 	border: none;
+	cursor: pointer;
 }
 
 .button-search:hover,
@@ -382,6 +394,7 @@ input[type="radio"].visually-hidden {
 	color: #000000;
 	background-color: #f2f2f2;
 	border: none;
+	cursor: pointer;
 }
 
 .search-form input:hover {
@@ -406,6 +419,7 @@ input[type="radio"].visually-hidden {
 	padding: 0;
 	margin: 0;
 	padding-left: 10px; 
+	cursor: pointer;
 } 
 
 .search-calendar {
@@ -417,6 +431,16 @@ input[type="radio"].visually-hidden {
 	vertical-align: middle;
 	background-color: #f2f2f2;
 	border: none;
+	cursor: pointer;
+}
+
+.search-calendar:hover path,
+.search-calendar:focus path {
+	fill: #000000;
+}
+
+.search-calendar:active path {
+	fill: #81b3d2;
 }
 
 .button-container input {
@@ -426,6 +450,7 @@ input[type="radio"].visually-hidden {
 	padding: 0;
 	margin: 0;
 	text-align: right;
+	cursor: pointer;
 } 
 
 .number-btn {
@@ -440,6 +465,7 @@ input[type="radio"].visually-hidden {
 	color: #a9a9a9;
   background-color: #f2f2f2;
   border: none;
+  cursor: pointer;
 }
 
 .number-btn:hover,
@@ -483,6 +509,7 @@ input[type="radio"].visually-hidden {
 	background-color: #81b3d2;
 	border: none;
 	margin-top: 25px;
+	cursor: pointer;
 }
 
 .search-button:hover,
@@ -501,14 +528,13 @@ input[type="radio"].visually-hidden {
 	max-height: 473px;
 	overflow: hidden;
 }
-/*не понимаю как элементы выровнены в футере. В % никак не подберу(
-какие-то кривые там отступы(*/
+
 .main-footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 20px 100px 20px 130px;
-	margin: 0px;
+	padding: 25px 8% 25px 11%;
+	margin: 0;
 	background-color: rgba(254, 254, 254, 0.9);
 }
 
@@ -521,6 +547,7 @@ input[type="radio"].visually-hidden {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-left: 26px;
 }
 
 .social-button {
@@ -530,10 +557,11 @@ input[type="radio"].visually-hidden {
 	background-position: center;
 	width: 46px;
 	height: 48px;
-	margin-right: 5px;
+	margin-right: 6px;
 	font-size: 0;
 	font-weight: 400;
 	color: #000000;
+	cursor: pointer;
 }
 
 /*тут у меня селектор слишком длинный получается. Можно сделать у li класс,
@@ -567,15 +595,19 @@ input[type="radio"].visually-hidden {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	outline: 1px solid red;
 }
 
 .footer-copyright p {
 	font-weight: 400;
 	line-height: 26px;
+	margin: 0;
 }
 
 .copyright-link {
-	margin-left: 10px;
+	margin: 6px 5px 0 7px;
+	cursor: pointer;
+	align-self: flex-end;
 }
 
 .copyright-link:hover path,
@@ -595,7 +627,6 @@ input[type="radio"].visually-hidden {
 
 .form {
 	color: white;
-	height: 220px;
 	background-image: url("../img/bg-form.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
@@ -618,37 +649,38 @@ input[type="radio"].visually-hidden {
 	position: relative;
 	padding-left: 40px;
 	font-weight: 400;
+	cursor: pointer;
 }
 
 .filter-input-checkbox {
 	display: none;
 }
 
-/*как их заставить работать-то?))) и у меня опять вложенность селекторов
-три штуки тут, а надо максимум две. добавлять классы? переименовывать?
-Чем в стайл гайде отличается состояние покой-наведение - не поняла
-И еще, в каких случаях у меня оно заблокировано будет?
-это отдельный класс сделать нужно или что?( */
-
-.filter-item label:before {
-	content: "";
-	position: absolute;
-	width: 27px;
-	height: 23px;
-	background-image: url("../img/icon-checkbox-on.svg");
-	background-repeat: no-repeat;
-	left: 0px;
-}
-
-.first-column .filter-item:nth-child(2) label:before,
-.first-column .filter-item:nth-child(3) label:before {
+.filter-input-checkbox + label::before {
 	content: "";
 	position: absolute;
 	width: 27px;
 	height: 23px;
 	background-image: url("../img/icon-checkbox-off.svg");
 	background-repeat: no-repeat;
-	left: 0px;
+	left: 0;
+	top: -1px;
+	cursor: pointer;
+}
+
+.filter-input-checkbox:checked + label::before {
+	background-image: url("../img/icon-checkbox-on.svg");
+}
+/*не понимаю как тут сделать правильный цвет.*/
+
+.filter-input-checkbox:disabled + label::before {
+	background-image: url("../img/icon-checkbox-off.svg");
+	opacity: 0.5;
+}
+
+.filter-input-checkbox:checked:disabled + label::before {
+	background-image: url("../img/icon-checkbox-on.svg");
+	opacity: 0.5;
 }
 
 .last-column-form legend {
@@ -656,17 +688,34 @@ input[type="radio"].visually-hidden {
 }
 
 .filter-cost {
-	font-weight: 400;
+	position: relative;
 	border: 2px solid white;
 	width: 320px;
-	height: 35px;
+	min-height: 36px;
 	border-radius: 2px;
-	margin-bottom: 60px;
+	margin-bottom: 20px;
+	font-weight: 400;
+}
+
+.filter-cost::after {
+  content: "";
+  position: absolute;
+	top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 22px;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
 }
 
 .filter-cost td {
-	text-align: right;
-	width: 80px;
+	text-align: center;
+	vertical-align: center;
+}
+
+.filter-cost label {
+	padding-left: 40px;
+	cursor: pointer;
 }
 
 .filter-cost input {
@@ -677,21 +726,63 @@ input[type="radio"].visually-hidden {
 	border: none;
 	margin: 0;
 	padding: 0;
-	width: 80px;
+	text-align: left;
+	width: 60px;
+  cursor: pointer;
+}
+
+ .filter-range {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.filter-range .scale {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.filter-range .bar {
+  width: 80%;
+  height: 2px;
+  background: #ffffff;
+}
+
+.filter-circle {
+	position: absolute;
+  top: -9px;
+  width: 4px;
+  height: 4px;
+  background: #ababab;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  cursor: pointer;
+}
+
+.filter-circle-min {
+  left: 0;
+}
+
+.filter-circle-max {
+  left: 80%;
+}
+
+.filter-circle:hover {
+  border: 9px solid #ffffff;
 }
 
 .filter-button {
-	width: 133px;
-	height: 32px;
-	background-color: transparent;
-	border: 2px solid white;
 	display: block;
-	margin: 0 auto;
-	font: inherit;
-	font-weight: 400;
-	text-transform: uppercase;
-	color: white;
-	vertical-align: middle;
+  margin: 0 auto 0 87px;
+  padding: 6px 34px;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  text-transform: uppercase;
+  background: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 .filter-button:hover,
@@ -703,7 +794,7 @@ input[type="radio"].visually-hidden {
 .filter-form {
 	display: flex;
 	justify-content: space-between;
-	padding: 27px 6%;
+	padding: 27px 6% 33px;
 }
 
 .filter-item {
@@ -738,12 +829,13 @@ input[type="radio"].visually-hidden {
 	justify-content: space-between;
 	align-items: center;
 	padding: 30px 6%;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 .sorting-list {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-end;
 	padding: 0;
 	margin: 0;
 	min-width: 50%
@@ -752,6 +844,7 @@ input[type="radio"].visually-hidden {
 .sorting-item-sum {
 	font-size: 21px;
 	line-height: 26px;
+	margin-right: 10px;
 }
 
 .sorting-item {
@@ -763,6 +856,7 @@ input[type="radio"].visually-hidden {
 .hotel-sorting-link {
 	font-size: 12px;
 	font-weight: 400;
+	line-height: 18px;
 	color: rgba(0, 0, 0, 0.3);
 	text-decoration: underline dashed #81b3d2;  
 }
@@ -786,13 +880,55 @@ input[type="radio"].visually-hidden {
 	display: inline-block;
 }
 
+.sort-icon-item:first-child {
+	margin-right: 7px;
+}
+
+.sort-icon-up {
+border-bottom: 10px solid #cacaca;
+border-left: 6px solid transparent;
+border-right: 6px solid transparent;
+}
+
+.sort-icon-down {
+border-top: 10px solid #cacaca;
+border-left: 6px solid transparent;
+border-right: 6px solid transparent;
+}
+
+.sort-icon-up-link:hover .sort-icon-up,
+.sort-icon-up-link:focus .sort-icon-up {
+	border-bottom: 10px solid #231f20;
+}
+
+.sort-icon-up-link:active .sort-icon-up {
+	border-bottom: 10px solid #81b3d2;
+}
+
+.sort-icon-down-link:hover .sort-icon-down,
+.sort-icon-down-link:focus .sort-icon-down {
+	border-top: 10px solid #231f20;
+}
+
+.sort-icon-down-link:active .sort-icon-down {
+	border-top: 10px solid #81b3d2;
+}
+
+.sort-icon-active .sort-icon-down {
+	border-top: 10px solid #81b3d2;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+}
+
 .hotel-item {
 	display: flex;
 	justify-content: space-between;
-	padding: 30px 6%;
+	padding: 27px 6% 29px;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 .hotel-name {
+	margin-bottom: 8px;
 	font: inherit;
 	font-size: 21px;
 	line-height: 26px;
@@ -800,30 +936,32 @@ input[type="radio"].visually-hidden {
 	color: black;
 }
 
-.hotel-name a:hover,
-.hotel-name a:focus {
+a:hover .hotel-name,
+a:focus .hotel-name {
 	color: #81b3d2;
 }
 
-.hotel-name a:active {
+a:active .hotel-name {
 	color: rgba(0, 0, 0, 0.3);
 }
 
 .hotel-info {
 	font-weight: 400;
 	display: flex;
+	align-items: flex-end;
 }
 
 .hotel-text {
 	margin-left: 30px;
 }
 
-.hotel-text span {
+.hotel-about span {
 	display: inline-block;
+	min-width: 112px;
 }
 
-.hotel-name, .hotel-about {
-	margin-bottom: 8px;
+.hotel-about {
+	margin-bottom: 14px;
 }
 
 .button-hotel {
@@ -831,20 +969,17 @@ input[type="radio"].visually-hidden {
 	text-align: center;
 	color: white;
 	display: inline-block;
-	vertical-align: middle;
-	/*почему здесь не срабатывает это выравнивание, не понимаю((*/
+	vertical-align: center;
+	padding: 3px 16px;
 }
 
 .button-hotel-more {
 	background-color: #81b3d2;
-	width: 110px;
-	height: 27px;
+	margin-right: 4px;
 }
 
 .button-hotel-order {
 	background-color: #766357;
-	width: 142px;
-	height: 27px;
 }
 
 .button-hotel-order:hover,
@@ -868,8 +1003,9 @@ input[type="radio"].visually-hidden {
 }
 
 .hotel-rating {
-	width: 110px;
-	height: 27px;
+	display: block;
+	padding: 3px 13px 3px 15px;
+	margin: 0;
 	font-weight: 400;
 	color: #666666;
 	vertical-align: middle;
@@ -884,7 +1020,9 @@ input[type="radio"].visually-hidden {
 	align-items: flex-end;
 }
 
-.hotel-rank p {
+.hotel-stars img {
+	padding: 0;
 	margin: 0;
+	margin-left: 2px;
+	margin-top: 4px;
 }
-

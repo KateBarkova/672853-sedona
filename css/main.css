@@ -149,7 +149,6 @@ input[type="radio"].visually-hidden {
 	max-width: 600px;
 	margin: 0 auto;
 	margin-bottom: 51px;
-	outline: 1px solid red;
 }
 
 .sedona-title {
@@ -177,7 +176,6 @@ input[type="radio"].visually-hidden {
 .container-text {
 	margin: 49px auto 60px auto;
 	max-width: 280px;
-	outline: 1px solid red;
 }
 
 .reason-title {
@@ -273,7 +271,6 @@ input[type="radio"].visually-hidden {
 	flex-grow: 1;
 	position: relative;
 	padding-top: 60px;
-	outline: 1px solid red;
 }
 
 .advice-item:first-child:before {
@@ -595,7 +592,6 @@ input[type="radio"].visually-hidden {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	outline: 1px solid red;
 }
 
 .footer-copyright p {

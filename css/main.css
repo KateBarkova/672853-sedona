@@ -117,8 +117,6 @@ input[type="radio"].visually-hidden {
 	background-position: bottom center, center -55px;
   background-repeat: no-repeat;
 }
-/*нарисовала я эти фигулины border-ом. Вопрос: если будет потом 
-резиновая верстка, ширина границы в % у меня не задается - что делать?)*/
 
 .mountains:after {
 	content: "";
@@ -535,55 +533,52 @@ input[type="radio"].visually-hidden {
 	margin: 0;
 	padding: 0;
 	margin-top: 10px;
-
 }
 
 .footer-social  {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-left: 26px;
+	margin-left: 33px;
 }
 
 .social-button {
-	display: block;
 	background-color: #81b3d2; 
+	margin-right: 6px; 
+}
+
+.social-button a {
+	display: block;
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 46px;
 	height: 48px;
-	margin-right: 6px;
 	font-size: 0;
 	font-weight: 400;
 	color: #000000;
 	cursor: pointer;
 }
 
-/*тут у меня селектор слишком длинный получается. Можно сделать у li класс,
-а у ссылки убрать? */
-
-.footer-social li:first-child .social-button {
+.social-button:first-child a {
 	background-image: url("../img/icon-twitter.svg");
 }
 
-.footer-social li:nth-child(2) .social-button {
+.social-button:nth-child(2) a {
 	background-image: url("../img/icon-fb.svg");
 }
 
-.footer-social li:last-child .social-button {
+.social-button:last-child a {
 	background-image: url("../img/icon-youtube.svg");
 	margin-right: 0px;
 }
 
-.social-button:hover, .social-button:focus {
+.social-button a:hover, .social-button a:focus {
 	background-color: #669ec0; 
 }
 
-.social-button:active {
+.social-button a:active {
 	opacity: 0.3;
-/*не понимаю, как здесь применить opacity к svg =()  эти картинки вставляем
-фоном - нормально? Или нужно в html вставить?*/
-	background-color: #5496bd; 
+	background-color: #5496bd;
 }
 
 .footer-copyright  {
@@ -682,7 +677,6 @@ input[type="radio"].visually-hidden {
 .filter-input-checkbox:checked + label::before {
 	background-image: url("../img/icon-checkbox-on.svg");
 }
-/*не понимаю как тут сделать правильный цвет.*/
 
 .filter-input-checkbox:disabled + label::before {
 	background-image: url("../img/icon-checkbox-off.svg");
@@ -730,7 +724,6 @@ input[type="radio"].visually-hidden {
 	cursor: pointer;
 	padding-left: 15px;
 }
-
 
 .filter-cost input {
 	font: inherit;
@@ -852,7 +845,9 @@ input[type="radio"].visually-hidden {
 	margin-right: 34px;
 }
 
-.sorting-item:nth-child(2) {margin-right: 40px;}
+.sorting-item:nth-child(2) {
+	margin-right: 40px;
+}
 
 .hotel-sorting-link {
 	font-size: 12px;
@@ -891,15 +886,15 @@ input[type="radio"].visually-hidden {
 }
 
 .sort-icon-up {
-border-bottom: 10px solid #cacaca;
-border-left: 6px solid transparent;
-border-right: 6px solid transparent;
+	border-bottom: 10px solid #cacaca;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
 }
 
 .sort-icon-down {
-border-top: 10px solid #cacaca;
-border-left: 6px solid transparent;
-border-right: 6px solid transparent;
+	border-top: 10px solid #cacaca;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
 }
 
 .sort-icon-up-link:hover .sort-icon-up,

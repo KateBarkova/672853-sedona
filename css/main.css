@@ -29,8 +29,6 @@ input[type="radio"].visually-hidden {
   overflow: hidden;
 }
 
-/*:focus {outline: 0;}*/
-
 .main-container {
 	width: 1200px;
 	margin: 0 auto;
@@ -84,17 +82,17 @@ input[type="radio"].visually-hidden {
 	z-index: 100;
 }
 
-.site-menu a {
+.site-menu a[href] {
   color: #000000;
   cursor: pointer;
 }
 
-.site-menu a:hover,
-.site-menu a:focus {
+.site-menu a[href]:hover,
+.site-menu a[href]:focus {
 	color: #81b3d2;
 }
 
-.site-menu a:active {
+.site-menu a[href]:active {
 	color: rgba(0, 0, 0, 0.3);
 }
 
@@ -112,7 +110,7 @@ input[type="radio"].visually-hidden {
 	width: 100%;
 	padding-top: 76px;
 	padding-bottom: 75px;
-	margin-bottom: 60px;
+	margin-bottom: 59px;
 	background-image: 
 		url("../img/bg-white.png"), 
 		url("../img/bg-mountain.jpg");
@@ -152,7 +150,7 @@ input[type="radio"].visually-hidden {
 }
 
 .sedona-title {
-	margin-bottom: 28px;
+	margin-bottom: 30px;
 	font-size: 21px;
 	line-height: 26px;
 }
@@ -170,11 +168,11 @@ input[type="radio"].visually-hidden {
 
 .reasons-foto {
 	display: flex;
-	align-items: flex-start;
+	align-items: stretch;
 }
 
 .container-text {
-	margin: 49px auto 60px auto;
+	margin: 45px auto 61px auto;
 	max-width: 280px;
 }
 
@@ -185,7 +183,7 @@ input[type="radio"].visually-hidden {
 
 .reason-title {
 	margin: 0 auto;
-	margin-bottom: 25px;
+	margin-bottom: 26px;
 }
 
 .reason-text,
@@ -241,15 +239,12 @@ input[type="radio"].visually-hidden {
 .foto {
 	display: block;
 	position: relative;
-	top: -78px;
+	bottom: 78px;
+	flex-basis: 66%;
 }
 
-/*у меня фото сохранено большое - для резиновой верстки.
-Как без явного указания высоты сделать так, чтобы у меня блок не удлинялся
-по высоте фото - не понимаю( И когда резина - там же ж высота меняется*/
-
 .reason-foto {
-	height: 256px;
+	max-height: 256px;
 	flex-basis: 66%;
 	overflow: hidden;
 	flex-grow: 1;
@@ -261,7 +256,7 @@ input[type="radio"].visually-hidden {
 	padding: 0;
 	margin: 0;
 	margin-top: 52px;
-	margin-bottom: 23px;
+	margin-bottom: 21px;
 	list-style: none;
 	background-color: #ffffff;
 }
@@ -270,7 +265,7 @@ input[type="radio"].visually-hidden {
 	flex-basis: 33%;
 	flex-grow: 1;
 	position: relative;
-	padding-top: 60px;
+	padding-top: 62px;
 }
 
 .advice-item:first-child:before {
@@ -279,7 +274,7 @@ input[type="radio"].visually-hidden {
 	background: url("../img/icon-accommodation.svg") no-repeat;
 	width: 75px;
 	height: 75px;
-	bottom: 172px;
+	bottom: 174px;
 	left: 50%;
 	transform: translateX(-50%);
 }
@@ -290,7 +285,7 @@ input[type="radio"].visually-hidden {
 	background: url("../img/icon-food.svg") no-repeat;
 	width: 75px;
 	height: 75px;
-	bottom: 171px;
+	bottom: 173px;
 	left: 50%;
 	transform: translateX(-51%);
 }
@@ -301,7 +296,7 @@ input[type="radio"].visually-hidden {
 	background: url("../img/icon-souvenirs.svg") no-repeat;
 	width: 75px;
 	height: 75px;
-	bottom: 175px;
+	bottom: 177px;
 	left: 50%;
 	transform: translateX(-43%);
 }
@@ -317,10 +312,11 @@ input[type="radio"].visually-hidden {
 
 .last-reasons-item {
 	flex-basis: 33%;
+	flex-grow: 1;
 }
 
 .search-container {
-	margin: 53px auto 45px;
+	margin: 50px auto 46px;
 	max-width: 450px;
 }
 
@@ -339,8 +335,7 @@ input[type="radio"].visually-hidden {
 }
 
 .button-search {
-	width: 568px;
-	height: 86px;
+	padding: 29px 139px 31px;
 	font: inherit;
 	font-size: 21px;
 	line-height: 26px;
@@ -363,8 +358,8 @@ input[type="radio"].visually-hidden {
 }
 
 .search-form {
-	max-width: 568px;
-	padding: 55px 55px;
+	min-width: 568px;
+	padding: 55px 55px 54px;
 	box-sizing: border-box;
 	position: absolute;
 	left: 50%;
@@ -374,6 +369,7 @@ input[type="radio"].visually-hidden {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
 }
 
 .search-form p {
@@ -415,18 +411,16 @@ input[type="radio"].visually-hidden {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
-	padding-left: 10px; 
+	padding-left: 12px; 
 	cursor: pointer;
 } 
 
 .search-calendar {
 	position: absolute;
-	transform: translateY(-50%);
-	top: 55%;
-	right: 0;
+	top: 7px;
+	right: 3px;
 	font: inherit;
-	vertical-align: middle;
-	background-color: #f2f2f2;
+  background-color: transparent;
 	border: none;
 	cursor: pointer;
 }
@@ -441,9 +435,8 @@ input[type="radio"].visually-hidden {
 }
 
 .button-container input {
-	width: 38px; 
-	height: 38px; 
-	box-sizing: border-box;
+	max-width: 38px;
+	max-height: 38px; 
 	padding: 0;
 	margin: 0;
 	text-align: right;
@@ -453,7 +446,6 @@ input[type="radio"].visually-hidden {
 .number-btn {
 	width: 38px; 
 	height: 38px; 
-	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
 	vertical-align: top;
@@ -483,7 +475,6 @@ input[type="radio"].visually-hidden {
 .search-number {
 	display: flex;
 	justify-content: space-between;
-	flex-grow: 1;
 	align-items: center;
 }
 
@@ -491,13 +482,16 @@ input[type="radio"].visually-hidden {
 	display: flex;
 }
 
-.search-number:last-child {
-	padding-left: 60px;
+.search-number:first-child .button-container {
+	margin-left: 40px;
+}
+
+.search-number:last-child label {
+	margin-right: 27px;
 }
 
 .search-button {
-	width: 458px;
-	height: 58px;
+	padding: 15px 195px 18px;
 	font: inherit;
 	font-size: 21px;
 	text-transform: uppercase;
@@ -505,7 +499,7 @@ input[type="radio"].visually-hidden {
 	vertical-align: middle;
 	background-color: #81b3d2;
 	border: none;
-	margin-top: 25px;
+	margin-top: 23px;
 	cursor: pointer;
 }
 
@@ -529,15 +523,19 @@ input[type="radio"].visually-hidden {
 .main-footer {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
-	padding: 25px 8% 25px 11%;
-	margin: 0;
+	align-items: flex-start;
+	padding: 36px 8% 36px 11%;
+	margin-bottom: 0;
 	background-color: rgba(254, 254, 254, 0.9);
 }
 
 .footer-hashtag {
 	font-size: 21px;
 	line-height: 26px;
+	margin: 0;
+	padding: 0;
+	margin-top: 10px;
+
 }
 
 .footer-social  {
@@ -598,10 +596,11 @@ input[type="radio"].visually-hidden {
 	font-weight: 400;
 	line-height: 26px;
 	margin: 0;
+	padding: 11px 0 13px;
 }
 
 .copyright-link {
-	margin: 6px 5px 0 7px;
+	margin: 0 5px 0 7px;
 	cursor: pointer;
 	align-self: flex-end;
 }
@@ -634,6 +633,22 @@ input[type="radio"].visually-hidden {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+}
+
+.filter-form {
+	display: flex;
+	justify-content: space-between;
+	padding: 27px 6% 32px;
+}
+
+.second-column, 
+.first-column {
+	flex-basis: 24%;
+}
+
+.last-column-form {
+	margin-left: auto;
+	flex-basis: 30%;
 }
 
 .filter-form legend {
@@ -686,11 +701,12 @@ input[type="radio"].visually-hidden {
 .filter-cost {
 	position: relative;
 	border: 2px solid white;
-	width: 320px;
+	width: 100%;
 	min-height: 36px;
 	border-radius: 2px;
 	margin-bottom: 20px;
 	font-weight: 400;
+	padding-left: 20px;
 }
 
 .filter-cost::after {
@@ -707,12 +723,14 @@ input[type="radio"].visually-hidden {
 .filter-cost td {
 	text-align: center;
 	vertical-align: center;
+	padding-top: 5px;
 }
 
 .filter-cost label {
-	padding-left: 40px;
 	cursor: pointer;
+	padding-left: 15px;
 }
+
 
 .filter-cost input {
 	font: inherit;
@@ -723,7 +741,7 @@ input[type="radio"].visually-hidden {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	width: 60px;
+	width: 50px;
   cursor: pointer;
 }
 
@@ -769,7 +787,7 @@ input[type="radio"].visually-hidden {
 
 .filter-button {
 	display: block;
-  margin: 0 auto 0 87px;
+  margin: 0 auto 0 83px;
   padding: 6px 34px;
   font-size: 14px;
   line-height: 21px;
@@ -787,12 +805,6 @@ input[type="radio"].visually-hidden {
 	background-color: white;
 }
 
-.filter-form {
-	display: flex;
-	justify-content: space-between;
-	padding: 27px 6% 33px;
-}
-
 .filter-item {
 	margin-top: 25px;
 }
@@ -801,15 +813,6 @@ input[type="radio"].visually-hidden {
 	border: none;
 	padding: 0;
 	margin: 0;
-}
-
-.second-column, 
-.first-column {
-	flex-basis: 255px;
-}
-
-.last-column-form {
-	margin-left: auto;
 }
 
 .sorting-item-sum, 
@@ -824,42 +827,44 @@ input[type="radio"].visually-hidden {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 30px 6%;
+	padding: 29px 6% 32px;
 	border-bottom: 1px solid #e5e5e5;
 }
 
 .sorting-list {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: flex-end;
 	padding: 0;
 	margin: 0;
-	min-width: 50%
 }
 
 .sorting-item-sum {
 	font-size: 21px;
 	line-height: 26px;
-	margin-right: 10px;
+	margin-right: 14px;
 }
 
 .sorting-item {
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 18px;
+	margin-right: 34px;
 }
+
+.sorting-item:nth-child(2) {margin-right: 40px;}
 
 .hotel-sorting-link {
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 18px;
 	color: rgba(0, 0, 0, 0.3);
-	text-decoration: underline dashed #81b3d2;  
+	border-bottom: 1px dashed #81b3d2;
 }
 
 .hotel-sorting-link-active {
 	color: #81b3d2;
-	text-decoration: none;
+	border-bottom: none;
 }
 
 .hotel-sorting-link:hover,
@@ -872,12 +877,17 @@ input[type="radio"].visually-hidden {
 	text-decoration: none;
 }
 
+.sort-icon-list {
+	align-self: flex-start; 
+}
+
 .sort-icon-item {
-	display: inline-block;
+	display: inline-block; 
+  vertical-align: bottom;
 }
 
 .sort-icon-item:first-child {
-	margin-right: 7px;
+	margin-right: 7px; 
 }
 
 .sort-icon-up {
@@ -919,12 +929,12 @@ border-right: 6px solid transparent;
 .hotel-item {
 	display: flex;
 	justify-content: space-between;
-	padding: 27px 6% 29px;
+	padding: 23px 6% 31px;
 	border-bottom: 1px solid #e5e5e5;
 }
 
 .hotel-name {
-	margin-bottom: 8px;
+	margin-bottom: 9px;
 	font: inherit;
 	font-size: 21px;
 	line-height: 26px;
@@ -966,7 +976,7 @@ a:active .hotel-name {
 	color: white;
 	display: inline-block;
 	vertical-align: center;
-	padding: 3px 16px;
+	padding: 3px 16px 3px;
 }
 
 .button-hotel-more {

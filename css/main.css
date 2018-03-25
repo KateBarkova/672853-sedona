@@ -44,7 +44,7 @@ input[type="radio"].visually-hidden {
 
 .site-menu,
 .reasons-list,
-.reasons-foto,
+.reasons-photo,
 .footer-social {
 	margin: 0;
   padding: 0;
@@ -144,7 +144,7 @@ input[type="radio"].visually-hidden {
 .container-intro {
 	max-width: 600px;
 	margin: 0 auto;
-	margin-bottom: 51px;
+	margin-bottom: 50px;
 }
 
 .sedona-title {
@@ -159,29 +159,21 @@ input[type="radio"].visually-hidden {
 	line-height: 26px;
 }
 
-.reason-title {
-	font-size: 21px;
-	margin-top: 0px;
-}
-
-.reasons-foto {
+.reasons-photo {
 	display: flex;
 	align-items: stretch;
 }
 
 .container-text {
-	margin: 45px auto 61px auto;
-	max-width: 280px;
+	margin: 46px auto 59px auto;
+	max-width: 285px;
 }
 
 .reason-title {
 	max-width: 151px;
 	margin: 0 auto;
-}
-
-.reason-title {
-	margin: 0 auto;
 	margin-bottom: 26px;
+	font-size: 21px;
 }
 
 .reason-text,
@@ -234,14 +226,14 @@ input[type="radio"].visually-hidden {
 	background-color: #ffffff;
 }
 
-.foto {
+.photo {
 	display: block;
 	position: relative;
 	bottom: 78px;
 	flex-basis: 66%;
 }
 
-.reason-foto {
+.reason-photo {
 	max-height: 256px;
 	flex-basis: 66%;
 	overflow: hidden;
@@ -253,8 +245,8 @@ input[type="radio"].visually-hidden {
 	justify-content: space-between;
 	padding: 0;
 	margin: 0;
-	margin-top: 52px;
-	margin-bottom: 21px;
+	margin-top: 60px;
+	margin-bottom: 23px;
 	list-style: none;
 	background-color: #ffffff;
 }
@@ -263,40 +255,19 @@ input[type="radio"].visually-hidden {
 	flex-basis: 33%;
 	flex-grow: 1;
 	position: relative;
-	padding-top: 62px;
+	padding-top: 54px;
 }
 
-.advice-item:first-child:before {
-	content: "";
-	position: absolute;
-	background: url("../img/icon-accommodation.svg") no-repeat;
-	width: 75px;
-	height: 75px;
-	bottom: 174px;
-	left: 50%;
-	transform: translateX(-50%);
+.advice-item:first-child {
+	background: url("../img/icon-accommodation.svg") 50% 0% no-repeat;
 }
 
-.advice-item:nth-child(2):before {
-	content: "";
-	position: absolute;
-	background: url("../img/icon-food.svg") no-repeat;
-	width: 75px;
-	height: 75px;
-	bottom: 173px;
-	left: 50%;
-	transform: translateX(-51%);
+.advice-item:nth-child(2) {
+	background: url("../img/icon-food.svg") 161px 1px no-repeat;
 }
 
-.advice-item:last-child:before {
-	content: "";
-	position: absolute;
-	background: url("../img/icon-souvenirs.svg") no-repeat;
-	width: 75px;
-	height: 75px;
-	bottom: 177px;
-	left: 50%;
-	transform: translateX(-43%);
+.advice-item:last-child {
+	background: url("../img/icon-souvenirs.svg") 50% -4px no-repeat;
 }
 
 .last-reasons {
@@ -314,7 +285,7 @@ input[type="radio"].visually-hidden {
 }
 
 .search-container {
-	margin: 50px auto 46px;
+	margin: 51px auto 46px;
 	max-width: 450px;
 }
 

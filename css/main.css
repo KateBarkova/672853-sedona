@@ -1,49 +1,98 @@
 body {
   margin: 0;
   padding: 0;
-
+	background-color: #f2f2f2; 
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 14px;
   line-height: 21px;
   font-weight: 700;
   color: #000000;
   text-transform: uppercase;
-
-  background-color: #f2f2f2;
-  width: 1200px;
-  margin: 0 auto;
 }
 
 a {
   text-decoration: none;
 }
 
-/*:focus {outline: 0;}*/
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.main-container {
+	width: 1200px;
+	margin: 0 auto;
+	box-shadow: 0 0 15px 0 rgba(0, 1, 1, 0.2);
+	position: relative;
+}
 
 .main-navigation {
+	padding: 0 6%;
   line-height: 26px;
   background-color: #ffffff;
 }
 
 .site-menu,
 .reasons-list,
-.reasons-foto,
+.reasons-photo,
 .footer-social {
 	margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.site-menu a {
-  color: #000000;
+.site-menu {
+	display: flex;
+	justify-content: space-between;
+	max-width: 1200px;
+	flex-wrap: wrap;
 }
 
-.site-menu a:hover,
-.site-menu a:focus {
+.menu-item  {
+  padding: 15px 0;
+ 	flex-basis: 20%;
+}
+
+.menu-item:nth-child(3) {
+	margin-left: 11%;
+	text-align: right;
+}
+
+.menu-item:nth-child(4) {
+	text-align: right;
+}
+
+.main-header-logo {
+	display: block;
+	width: 138px;
+	height: 70px;
+	position: absolute;
+	transform: translateX(-50%);
+	left: 50%;
+	z-index: 100;
+}
+
+.site-menu a[href] {
+  color: #000000;
+  cursor: pointer;
+}
+
+.site-menu a[href]:hover,
+.site-menu a[href]:focus {
 	color: #81b3d2;
 }
 
-.site-menu a:active {
+.site-menu a[href]:active {
 	color: rgba(0, 0, 0, 0.3);
 }
 
@@ -52,50 +101,56 @@ a {
 }
 
 .container {
+	display: block;
 	text-align: center;
 	background-color: white;
 }
 
 .mountains {
-	
+	position: relative;
+	width: 100%;
+	padding-top: 76px;
+	padding-bottom: 75px;
+	margin-bottom: 59px;
 	background-image: 
 		url("../img/bg-white.png"), 
 		url("../img/bg-mountain.jpg");
-	background-position: bottom center, top center;
+	background-position: bottom center, center -55px;
   background-repeat: no-repeat;
 }
 
-/* На это не смотри пока, у меня не получается вставить эти белые горы
-и отцентровать фото-текст по вертикали =(( ))
-
-.mountains::after {
+/* 
+.mountains:after {
 	content: "";
-	background-image: url("../img/bg-white.png");
-	background-position: top center;
-}
-.mountains img {
-
-} */
-
-.visually-hidden {
-	font-size: 0px;
 	position: absolute;
+	box-sizing: border-box;
+	border-top: 57px solid transparent;
+	border-right: 600px solid red;
+	border-left: 600px solid red;
+	bottom: 0;
+	left: 0;
 }
 
-/*{
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  …
+.mountains:before {
+	content: "";
+	position: absolute;
+	box-sizing: border-box;
+	border-top: 57px solid transparent;
+	border-right: 350px solid orange;
+	border-left: 350px solid orange;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
 }*/
-/*.reasons {background-color: red;}
 
-.visually-hidden {background-color: orange;}
-*/
+.container-intro {
+	max-width: 600px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
 
 .sedona-title {
+	margin-bottom: 30px;
 	font-size: 21px;
 	line-height: 26px;
 }
@@ -106,19 +161,66 @@ a {
 	line-height: 26px;
 }
 
+.reasons-photo {
+	display: flex;
+	align-items: stretch;
+}
+
+.container-text {
+	margin: 46px auto 59px auto;
+	max-width: 280px;
+}
+
+.big-container-text {
+	max-width: 305px;
+}
+
 .reason-title {
+	max-width: 151px;
+	margin: 0 auto;
+	margin-bottom: 26px;
 	font-size: 21px;
-	margin-top: 0px;
 }
 
 .reason-text,
 .reason-number {
 	font-weight: 400;
 	color: #333333;
-	margin-bottom: 0px;
+	margin: 0;
+}
+
+.reason-number {
+	position: relative;
+	display: block;	
+	margin: 0 auto;
+	margin-bottom: 20px;
+	max-width: 50px;
+}
+
+.reason-number:before {
+	content: "";
+	position: absolute;
+	top: 9px;
+	left: 0;
+	width: 8px;
+	height: 2px;
+	background-color: #333333;
+}
+
+.reason-number:after {
+	content: "";
+	position: absolute;
+	top: 9px;
+	right: 0;
+	width: 8px;
+	height: 2px;
+	background-color: #333333;
 }
 
 .reason-item-blue {
+	display: block;
+	flex-basis: 33%;
+	flex-grow: 1;
 	color: #ffffff;
 	background-color: #81b3d2;
 }
@@ -128,38 +230,89 @@ a {
 	color: #ffffff;
 }
 
+.reason-item-blue .reason-number:before,
+.reason-item-blue .reason-number:after {
+	background-color: #ffffff;
+}
+
+.photo {
+	display: block;
+	position: relative;
+	bottom: 78px;
+}
+
+.reason-photo {
+	max-height: 256px;
+	flex-basis: 66%;
+	overflow: hidden;
+	flex-grow: 1;
+}
+
 .advice-list {
+	display: flex;
+	justify-content: space-between;
 	padding: 0;
 	margin: 0;
+	margin-top: 56px;
+	margin-bottom: 23px;
 	list-style: none;
 	background-color: #ffffff;
 }
 
+.advice-item {
+	flex-basis: 33%;
+	flex-grow: 1;
+	position: relative;
+	padding-top: 58px;
+}
+
+.advice-item:first-child {
+	background: url("../img/icon-accommodation.svg") 50% 4px no-repeat;
+}
+
+.advice-item:nth-child(2) {
+	background: url("../img/icon-food.svg") 161px 5px no-repeat;
+}
+
+.advice-item:last-child {
+	background: url("../img/icon-souvenirs.svg") 50% 0px no-repeat;
+}
+
 .last-reasons {
+	display: flex;
+	justify-content: space-between;
 	padding: 0;
 	margin: 0;
 	list-style: none;
 	background-color: #eeeeee;
 }
 
-.search {
-	background-color: #ffffff;
+.last-reasons-item {
+	flex-basis: 33%;
+	flex-grow: 1;
+}
+
+.search-container {
+	margin: 51px auto 46px;
+	max-width: 450px;
 }
 
 .search-title {
+	margin: 0 auto;
+	margin-bottom: 25px;
 	font-size: 30px;
 	line-height: 36px;
 }
 
 .search-text {
+	margin: 0 auto;
 	font-weight: 400;
 	line-height: 24px;
 	color: #333333;
 }
 
 .button-search {
-	width: 568px;
-	height: 86px;
+	padding: 29px 139px 31px;
 	font: inherit;
 	font-size: 21px;
 	line-height: 26px;
@@ -168,6 +321,7 @@ a {
 	vertical-align: middle;
 	background-color: #766357;
 	border: none;
+	cursor: pointer;
 }
 
 .button-search:hover,
@@ -181,8 +335,27 @@ a {
 }
 
 .search-form {
-	line-height: 26px;
+	min-width: 568px;
+	padding: 55px 55px 54px;
+	box-sizing: border-box;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
 	background-color: #ffffff;
+	line-height: 26px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
+}
+
+.search-form p {
+	margin: 0;
+	margin-bottom: 30px;
+}
+
+.search-form .search-date {
+	margin-bottom: 30px;
 }
 
 .search-form input {
@@ -191,6 +364,7 @@ a {
 	color: #000000;
 	background-color: #f2f2f2;
 	border: none;
+	cursor: pointer;
 }
 
 .search-form input:hover {
@@ -201,20 +375,63 @@ a {
 	background-color: #ffffff;
 }
 
-.search-calendar {
-	font: inherit;
-	vertical-align: middle;
-	background-color: #f2f2f2;
-	border: none;
+.search-date {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
 }
 
-.number-btn {
+.search-date input {
+	width: 346px; 
+	height: 38px; 
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	padding-left: 12px; 
+	cursor: pointer;
+} 
+
+.search-calendar {
+	position: absolute;
+	top: 7px;
+	right: 3px;
 	font: inherit;
-	font-size: 21px;
-	vertical-align: middle;
+  background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.search-calendar:hover path,
+.search-calendar:focus path {
+	fill: #000000;
+}
+
+.search-calendar:active path {
+	fill: #81b3d2;
+}
+
+.button-container input {
+	max-width: 38px;
+	max-height: 38px; 
+	padding: 0;
+	margin: 0;
+	text-align: right;
+	cursor: pointer;
+} 
+
+.number-btn {
+	width: 38px; 
+	height: 38px; 
+	padding: 0;
+	margin: 0;
+	vertical-align: top;
+	font: inherit;
+	font-size: 26px;
 	color: #a9a9a9;
   background-color: #f2f2f2;
   border: none;
+  cursor: pointer;
 }
 
 .number-btn:hover,
@@ -226,9 +443,32 @@ a {
   color: #81b3d2;
 }
 
+.number-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.search-number {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.button-container {
+	display: flex;
+}
+
+.search-number:first-child .button-container {
+	margin-left: 40px;
+}
+
+.search-number:last-child label {
+	margin-right: 27px;
+}
+
 .search-button {
-	width: 458px;
-	height: 58px;
+	padding: 15px 195px 18px;
 	font: inherit;
 	font-size: 21px;
 	text-transform: uppercase;
@@ -236,7 +476,8 @@ a {
 	vertical-align: middle;
 	background-color: #81b3d2;
 	border: none;
-	margin-top: 25px;
+	margin-top: 23px;
+	cursor: pointer;
 }
 
 .search-button:hover,
@@ -249,34 +490,129 @@ a {
 	background-color: #5496bd;
 }
 
-.main-footer {
+.map p {
+	padding: 0; 
+	margin: 0;
+	max-height: 594px;
+	overflow: hidden;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding: 36px 8% 36px 11%;
+	margin-bottom: 0;
 	background-color: rgba(254, 254, 254, 0.9);
+}
+
+.main-footer {
+	position: absolute;
+	bottom: 0;
+	box-sizing: border-box;
+	width: 100%;
 }
 
 .footer-hashtag {
 	font-size: 21px;
 	line-height: 26px;
+	margin: 0;
+	padding: 0;
+	margin-top: 10px;
 }
 
-.social-button {
+.footer-social  {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: 33px;
+}
+
+.social-button a {
+	display: block;
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 46px;
+	height: 48px;
+	font-size: 0;
 	font-weight: 400;
 	color: #000000;
+	cursor: pointer;
+	background-color: #81b3d2;
+	margin-right: 6px;
+}
+
+.social-button a:hover, 
+.social-button a:focus {
+	background-color: #669ec0; 
+}
+
+.social-button a:active {
+	background-color: #5496bd;
+}
+
+.social-button a::before {
+	content: "";
+	position: absolute;
+	width: 46px;
+	height: 48px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.social-button:first-child a::before {
+	background-image: url("../img/icon-twitter.svg");
+}
+
+.social-button:nth-child(2) a::before {
+	background-image: url("../img/icon-fb.svg");
+}
+
+.social-button:last-child a::before {
+	background-image: url("../img/icon-youtube.svg");
+}
+
+.social-button a:active::before 
+{opacity: 0.5;}
+
+.footer-copyright  {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .footer-copyright p {
 	font-weight: 400;
 	line-height: 26px;
+	margin: 0;
+	padding: 11px 0 13px;
+}
+
+.copyright-link {
+	margin: 0 5px 0 7px;
+	cursor: pointer;
+	align-self: flex-end;
+}
+
+.copyright-link:hover path,
+.copyright-link:focus path {
+	fill: #81b3d2;
+}
+
+.copyright-link:active path {
+	fill: #bdbbbc;
 }
 
 /*inner*/
 
 .main-inner {
+	display: block;
 	background-color: #fefefe;
 }
 
 .form {
 	color: white;
-	height: 220px;
 	background-image: url("../img/bg-form.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
@@ -290,16 +626,97 @@ a {
 	list-style: none;
 }
 
+.filter-form {
+	display: flex;
+	justify-content: space-between;
+	padding: 27px 6% 32px;
+}
+
+.second-column, 
+.first-column {
+	flex-basis: 24%;
+}
+
+.last-column-form {
+	margin-left: auto;
+	flex-basis: 30%;
+}
+
 .filter-form legend {
 	font-size: 16px;
 }
 
- .filter-item label {
+.filter-item label {
+	display: block;
+	position: relative;
+	padding-left: 40px;
 	font-weight: 400;
+	cursor: pointer;
+}
+
+.filter-input-checkbox {
+	display: none;
+}
+
+.filter-input-checkbox + label::before {
+	content: "";
+	position: absolute;
+	width: 27px;
+	height: 23px;
+	background-image: url("../img/icon-checkbox-off.svg");
+	background-repeat: no-repeat;
+	left: 0;
+	top: -1px;
+	cursor: pointer;
+}
+
+.filter-input-checkbox:checked + label::before {
+	background-image: url("../img/icon-checkbox-on.svg");
+}
+
+.filter-input-checkbox:disabled + label::before {
+	background-image: url("../img/icon-checkbox-off-disable.svg");
+}
+
+.filter-input-checkbox:checked:disabled + label::before {
+	background-image: url("../img/icon-checkbox-on-disable.svg");
+}
+
+.last-column-form legend {
+	margin-bottom: 10px;
 }
 
 .filter-cost {
+	position: relative;
+	border: 2px solid white;
+	width: 100%;
+	min-height: 36px;
+	border-radius: 2px;
+	margin-bottom: 20px;
 	font-weight: 400;
+	padding-left: 20px;
+}
+
+.filter-cost::after {
+  content: "";
+  position: absolute;
+	top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 22px;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+}
+
+.filter-cost td {
+	text-align: center;
+	vertical-align: center;
+	padding-top: 5px;
+}
+
+.filter-cost label {
+	cursor: pointer;
+	padding-left: 15px;
 }
 
 .filter-cost input {
@@ -308,16 +725,65 @@ a {
 	color: #ffffff;
 	background-color: transparent;
 	border: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	width: 50px;
+  cursor: pointer;
+}
+
+ .filter-range {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.filter-range .scale {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.filter-range .bar {
+  width: 80%;
+  height: 2px;
+  background: #ffffff;
+}
+
+.filter-circle {
+	position: absolute;
+  top: -9px;
+  width: 4px;
+  height: 4px;
+  background: #ababab;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  cursor: pointer;
+}
+
+.filter-circle-min {
+  left: 0;
+}
+
+.filter-circle-max {
+  left: 80%;
+}
+
+.filter-circle:hover {
+  border: 9px solid #ffffff;
 }
 
 .filter-button {
-	font: inherit;
-	font-weight: 400;
-	text-transform: uppercase;
-	color: white;
-	vertical-align: middle;
-	background-color: transparent;
-	border: 2px solid white;
+	display: block;
+  margin: 0 auto 0 83px;
+  padding: 6px 34px;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  text-transform: uppercase;
+  background: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 .filter-button:hover,
@@ -326,27 +792,68 @@ a {
 	background-color: white;
 }
 
+.filter-item {
+	margin-top: 25px;
+}
+
+.filter-form fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+.sorting-item-sum, 
+.sorting-list, 
+.sorting-item, 
+.hotel-name {
+	padding: 0;
+	margin: 0;
+}
+
+.hotel-sorting {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 29px 6% 32px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.sorting-list {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	padding: 0;
+	margin: 0;
+}
+
 .sorting-item-sum {
 	font-size: 21px;
 	line-height: 26px;
+	margin-right: 14px;
 }
 
 .sorting-item {
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 18px;
+	margin-right: 34px;
+}
+
+.sorting-item:nth-child(2) {
+	margin-right: 40px;
 }
 
 .hotel-sorting-link {
 	font-size: 12px;
 	font-weight: 400;
+	line-height: 18px;
 	color: rgba(0, 0, 0, 0.3);
-	text-decoration: underline dashed #81b3d2;  
+	border-bottom: 1px dashed #81b3d2;
 }
 
 .hotel-sorting-link-active {
 	color: #81b3d2;
-	text-decoration: none;
+	border-bottom: none;
 }
 
 .hotel-sorting-link:hover,
@@ -359,26 +866,97 @@ a {
 	text-decoration: none;
 }
 
+.sort-icon-list {
+	align-self: flex-start; 
+}
+
+.sort-icon-item {
+	display: inline-block; 
+  vertical-align: bottom;
+}
+
+.sort-icon-item:first-child {
+	margin-right: 7px; 
+}
+
+.sort-icon-up {
+	border-bottom: 10px solid #cacaca;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+}
+
+.sort-icon-down {
+	border-top: 10px solid #cacaca;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+}
+
+.sort-icon-up-link:hover .sort-icon-up,
+.sort-icon-up-link:focus .sort-icon-up {
+	border-bottom: 10px solid #231f20;
+}
+
+.sort-icon-up-link:active .sort-icon-up {
+	border-bottom: 10px solid #81b3d2;
+}
+
+.sort-icon-down-link:hover .sort-icon-down,
+.sort-icon-down-link:focus .sort-icon-down {
+	border-top: 10px solid #231f20;
+}
+
+.sort-icon-down-link:active .sort-icon-down {
+	border-top: 10px solid #81b3d2;
+}
+
+.sort-icon-active .sort-icon-down {
+	border-top: 10px solid #81b3d2;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+}
+
+.hotel-item {
+	display: flex;
+	justify-content: space-between;
+	padding: 23px 6% 31px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
 .hotel-name {
+	margin-bottom: 9px;
 	font: inherit;
 	font-size: 21px;
 	line-height: 26px;
 	font-weight: 700;
 	color: black;
-
 }
 
-.hotel-name a:hover,
-.hotel-name a:focus {
+a:hover .hotel-name,
+a:focus .hotel-name {
 	color: #81b3d2;
 }
 
-.hotel-name a:active {
+a:active .hotel-name {
 	color: rgba(0, 0, 0, 0.3);
 }
 
 .hotel-info {
 	font-weight: 400;
+	display: flex;
+	align-items: flex-end;
+}
+
+.hotel-text {
+	margin-left: 30px;
+}
+
+.hotel-about span {
+	display: inline-block;
+	min-width: 112px;
+}
+
+.hotel-about {
+	margin-bottom: 14px;
 }
 
 .button-hotel {
@@ -386,20 +964,17 @@ a {
 	text-align: center;
 	color: white;
 	display: inline-block;
-	vertical-align: middle;
-	/*почему здесь не срабатывает это выравнивание, не понимаю((*/
+	vertical-align: center;
+	padding: 3px 16px 3px;
 }
 
 .button-hotel-more {
 	background-color: #81b3d2;
-	width: 110px;
-	height: 27px;
+	margin-right: 4px;
 }
 
 .button-hotel-order {
 	background-color: #766357;
-	width: 142px;
-	height: 27px;
 }
 
 .button-hotel-order:hover,
@@ -423,349 +998,14 @@ a {
 }
 
 .hotel-rating {
-	width: 110px;
-	height: 27px;
+	display: block;
+	padding: 3px 13px 3px 15px;
+	margin: 0;
 	font-weight: 400;
 	color: #666666;
 	vertical-align: middle;
 	text-align: center;	
 	background-color: #f2f2f2;
-}
-
-/*Разметка*/
-
-.site-menu {
-	display: flex;
-	justify-content: space-between;
-	max-width: 1200px;
-}
-/*не полуается у меня блоки разместить так, чтобы они совпадали с макетом(*/
-.menu-item  {
-	align-content: center;
-	padding: 15px 0;
- 	max-width: 20%;
-}
-
-.menu-item:nth-child(4) {
-	margin-right: 6%;
-}
-
-.menu-item:nth-child(1) {
-	margin-left: 6%;
-}
-
-.menu-item:nth-child(2) {
-	margin-right: 8%
-}
-
-.menu-item:nth-child(3) {
-	margin-left: 8%;
-}
-
-.main-header-logo {
-	display: block;
-	width: 138px;
-	height: 70px;
-	position: absolute;
-	transform: translateX(-50%);
-	left: 50%;
-}
-
-.mountains {
-	padding-top: 75px;
-	padding-bottom: 80px;
-	margin-bottom: 65px;
-}
-
-.container-intro {
-	max-width: 600px;
-	margin: 0 auto;
-	margin-bottom: 55px;
-}
-
-.sedona-title {
-	margin-bottom: 35px;
-}
-
-.reasons-foto {
-	display: flex;
-}
-
-.foto1, .foto2 {
-	display: block;
-}
-
-.container-text {
-	margin: 45px 60px 60px 60px;
-}
-
-.reason-title {
-	max-width: 151px;
-	margin: 0 auto;
-}
-
-.reason-title, .reason-number, .reason-text {
-	margin-bottom: 21px;
-}
-
-.advice-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.advice-item {
-	padding-top: 120px;
-	max-width: 33%;
-}
-
-.last-reasons {
-	display: flex;
-	justify-content: space-between;
-}
-
-.last-reasons-item {
-	max-width: 33%
-}
-
-.search-container {
-	margin: 55px auto;
-	max-width: 450px;
-}
-
-.search-title {
-	margin: 0 auto;
-	margin-bottom: 35px;
-}
-
-.search-text {
-	margin: 0 auto;
-}
-
-.search-form {
-	width: 568px;
-	height: 385px;
-	margin: 0 auto;
-	padding: 55px 60px;
-	box-sizing: border-box;
-	background-color: yellow;
-	/*пусть пока желтое, ладно? Не могу понять как убрать маленькие
-	отступы между кнопкой + - и инпутом И еще я button-container
-	сделала спаном. Потому что когда я его делаю дивом, у меня почему-то 
-	не работает флекс. Все голову сломала, не понимаю. И.е. как бЭ этот
-	див вообще отдельно становится =( И вообще какое-то выравнивание 
-	я сделала кривое в форме. Может я не то сделала флексами вообще?
-	Посмотри, пжл*/
-}
-
-.search-date {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: relative;
-}
-
-.search-date input {
-	width: 330px; 
-	height: 38px; 
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-	padding-left: 5px; 
-} 
-
-.search-calendar {
-	position: absolute;
-	transform: translateY(-50%);
-	top: 55%;
-	right: 0;
-}
-
-.search-number input {
-	width: 38px; 
-	height: 38px; 
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-	text-align: right;
-} 
-
-.search-number {
-	display: flex;
-	justify-content: space-between;
-	min-width: 50%;
-	align-items: center;
-}
-
-.number-container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.number-btn {
-	width: 38px; 
-	height: 38px; 
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-	vertical-align: top;
-}
-
-.search-number:last-child {
-	padding-left: 45px; 
-	box-sizing: border-box;
-}
-
-.search-form p {
-	margin: 0;
-	margin-bottom: 25px;
-}
-
-.map p {
-	padding: 0; 
-	margin: 0;}
-
-.main-footer {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	padding: 20px 0;
-	margin: 0px;
-}
-
-.footer-copyright  {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.footer-social  {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.social-button {
-	display: block;
-	background-color: #81b3d2; 
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 46px;
-	height: 48px;
-	margin-right: 5px;
-	font-size: 0;
-}
-/*тут у меня селектор слишком длинный получается. Можно сделать у li класс,
-а у ссылки убрать? */
-
-.footer-social li:first-child .social-button {
-	background-image: url("../img/icon-twitter.svg");
-}
-
-.footer-social li:nth-child(2) .social-button {
-	background-image: url("../img/icon-fb.svg");
-}
-
-.footer-social li:last-child .social-button {
-	background-image: url("../img/icon-youtube.svg");
-	margin-right: 0px;
-}
-
-.social-button:hover, .social-button:focus {
-	background-color: #669ec0; 
-}
-
-.social-button:active {
-/*не понимаю, как здесь применить opacity к svg =()  эти картинки вставляем
-фоном - нормально? Или нужно в html вставить?*/
-	background-color: #5496bd; 
-}
-
-.copyright-link {
-	margin-left: 10px;
-}
-
-/*inner-разметка*/
-
-.filter-form {
-	display: flex;
-	justify-content: space-between;
-	padding: 20px 6%;
-}
-
-.filter-item {
-	margin-top: 30px;
-}
-
-.filter-form fieldset {
-	border: none;
-}
-
-.second-column {
-	margin-left: 100px;
-	margin-right: auto;
-}
-
-.last-column-form {
-	min-width: 330px;
-}
-
-.filter-button {
-	width: 133px;
-	height: 32px;
-}
-
-.sorting-list {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0;
-	margin: 0;
-}
-
-.hotel-sorting {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 30px 6%;
-
-}
-
-.sorting-item-sum, 
-.sorting-list, 
-.sorting-item, 
-.hotel-name {
-	padding: 0;
-	margin: 0;
-}
-
-.sorting-list {
-	min-width: 50%
-}
-
-.sort-icon-item {
-	display: inline-block;
-}
-
-.hotel-item {
-	display: flex;
-	justify-content: space-between;
-	padding: 30px 6%;
-}
-.hotel-info {
-	display: flex;
-}
-
-.hotel-text {
-	margin-left: 30px;
-}
-
-.hotel-text span {
-	display: inline-block;
-}
-
-.hotel-name, .hotel-about {
-	margin-bottom: 8px;
 }
 
 .hotel-rank {
@@ -775,6 +1015,9 @@ a {
 	align-items: flex-end;
 }
 
-.hotel-rank p {
-	margin: 0
+.hotel-stars img {
+	padding: 0;
+	margin: 0;
+	margin-left: 2px;
+	margin-top: 4px;
 }

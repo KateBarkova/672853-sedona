@@ -285,6 +285,8 @@ input[type="radio"].visually-hidden {
 	margin: 0;
 	list-style: none;
 	background-color: #eeeeee;
+	position: relative;
+	z-index: 4;
 }
 
 .last-reasons-item {
@@ -293,9 +295,17 @@ input[type="radio"].visually-hidden {
 }
 
 .search-container {
-	margin: 51px auto 46px;
+	position: relative;
+	z-index: 4;
+	margin: 0 auto 46px;
 	max-width: 450px;
+	padding-top: 51px;
 }
+
+.search {
+	position: relative;
+	z-index: 10; 
+	background-color: white;}
 
 .search-title {
 	margin: 0 auto;
@@ -312,6 +322,8 @@ input[type="radio"].visually-hidden {
 }
 
 .button-search {
+	position: relative;
+	z-index: 4;
 	padding: 29px 139px 31px;
 	font: inherit;
 	font-size: 21px;
@@ -339,11 +351,12 @@ input[type="radio"].visually-hidden {
 	padding: 55px 55px 54px;
 	box-sizing: border-box;
 	position: absolute;
+	z-index: 2;
 	left: 50%;
 	transform: translateX(-50%);
 	background-color: #ffffff;
 	line-height: 26px;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	justify-content: space-between;
 	box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
@@ -425,7 +438,6 @@ input[type="radio"].visually-hidden {
 	height: 38px; 
 	padding: 0;
 	margin: 0;
-	vertical-align: top;
 	font: inherit;
 	font-size: 26px;
 	color: #a9a9a9;
@@ -511,6 +523,7 @@ input[type="radio"].visually-hidden {
 	bottom: 0;
 	box-sizing: border-box;
 	width: 100%;
+	z-index: 2;
 }
 
 .footer-hashtag {
@@ -863,7 +876,7 @@ input[type="radio"].visually-hidden {
 
 .hotel-sorting-link:active {
 	color: #000000;
-	text-decoration: none;
+	border-bottom: none;
 }
 
 .sort-icon-list {
@@ -1020,4 +1033,30 @@ a:active .hotel-name {
 	margin: 0;
 	margin-left: 2px;
 	margin-top: 4px;
+}
+
+/*js*/
+
+.map-sedona {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 594px;
+}
+
+@keyframes falling {
+  0% {
+    transform: translate(-50%, -400px);
+  }
+  50% {
+    transform: translate(-50%, 100px);
+  }
+  100% {
+    transform: translate(-50%, 0px);
+	}
+}
+
+.form-show {
+  animation: falling 3s;
+  display: flex;
 }

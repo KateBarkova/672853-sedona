@@ -349,6 +349,10 @@ input[type="radio"].visually-hidden {
 	margin-bottom: 30px;
 }
 
+.search-date label {
+	margin-right: auto;
+}
+
 .search-form input {
 	font: inherit;
 	text-transform: uppercase;
@@ -384,6 +388,10 @@ input[type="radio"].visually-hidden {
 	cursor: pointer;
 } 
 
+.search-date input::-ms-clear {
+    display: none;
+}
+
 .search-calendar {
 	position: absolute;
 	top: 7px;
@@ -408,7 +416,7 @@ input[type="radio"].visually-hidden {
 	max-height: 38px; 
 	padding: 0;
 	margin: 0;
-	text-align: right;
+	text-align: center;
 	cursor: pointer;
 } 
 
@@ -864,54 +872,81 @@ input[type="radio"].visually-hidden {
 	border-bottom: none;
 }
 
-.sort-icon-list {
-	align-self: flex-start; 
-}
-
 .sort-icon-item {
 	display: inline-block; 
-  vertical-align: bottom;
+  vertical-align: center;
 }
 
 .sort-icon-item:first-child {
-	margin-right: 7px; 
+	margin-right: 20px; 
 }
 
-.sort-icon-up {
+.sort-icon-down-link, 
+.sort-icon-up-link {
+	font-size: 0;
+	position: relative;
+}
+
+.sort-icon-up-link::before  {
+	content: "";
+	position: absolute;
 	border-bottom: 10px solid #cacaca;
 	border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
+	bottom: -5px;
+	right: 0px;
 }
 
-.sort-icon-down {
+.sort-icon-down-link::before  {
+	content: "";
+	position: absolute;
 	border-top: 10px solid #cacaca;
 	border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
+	position: absolute;
+	bottom: -5px;
+	right: 0px;
 }
 
-.sort-icon-up-link:hover .sort-icon-up,
-.sort-icon-up-link:focus .sort-icon-up {
+.sort-icon-up-link:hover::before,
+.sort-icon-up-link:focus::before {
 	border-bottom: 10px solid #231f20;
 }
 
-.sort-icon-up-link:active .sort-icon-up {
+.sort-icon-up-link:active::before {
 	border-bottom: 10px solid #81b3d2;
 }
 
-.sort-icon-down-link:hover .sort-icon-down,
-.sort-icon-down-link:focus .sort-icon-down {
+.sort-icon-down-link:hover::before,
+.sort-icon-down-link:focus::before {
 	border-top: 10px solid #231f20;
 }
 
-.sort-icon-down-link:active .sort-icon-down {
+.sort-icon-down-link:active::before {
 	border-top: 10px solid #81b3d2;
 }
 
-.sort-icon-active .sort-icon-down {
+.sort-icon-active::before {
 	border-top: 10px solid #81b3d2;
 	border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .hotel-item {
 	display: flex;

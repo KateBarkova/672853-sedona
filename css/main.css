@@ -30,7 +30,8 @@ input[type="radio"].visually-hidden {
 }
 
 .main-container {
-	width: 1200px;
+	max-width: 1200px;
+	min-width: 768px;
 	margin: 0 auto;
 	box-shadow: 0 0 15px 0 rgba(0, 1, 1, 0.2);
 	position: relative;
@@ -118,6 +119,7 @@ input[type="radio"].visually-hidden {
 	background-position: bottom center, center -55px;
   background-repeat: no-repeat;
   background-color: #68757a;
+  background-size: 100%, auto;
 }
 
 .container-intro {
@@ -144,12 +146,12 @@ input[type="radio"].visually-hidden {
 }
 
 .container-text {
-	margin: 46px auto 59px auto;
-	max-width: 280px;
+	margin: 46px auto 0 auto;
+	max-width: 69.7%;
 }
 
 .big-container-text {
-	max-width: 305px;
+	max-width: 80%;
 }
 
 .reason-title {
@@ -196,7 +198,7 @@ input[type="radio"].visually-hidden {
 
 .reason-item-blue {
 	display: block;
-	flex-basis: 33%;
+	flex-basis: 33.3%;
 	flex-grow: 1;
 	color: #ffffff;
 	background-color: #81b3d2;
@@ -215,12 +217,14 @@ input[type="radio"].visually-hidden {
 .photo {
 	display: block;
 	position: relative;
-	bottom: 78px;
+	bottom: 78px; 
+	object-fit: contain; 
+	width: 100%;
 }
 
 .reason-photo {
 	max-height: 256px;
-	flex-basis: 66%;
+	flex-basis: 66.6%;
 	overflow: hidden;
 	flex-grow: 1;
 }
@@ -230,10 +234,11 @@ input[type="radio"].visually-hidden {
 	justify-content: space-between;
 	padding: 0;
 	margin: 0;
-	margin-top: 56px;
-	margin-bottom: 23px;
+	padding-top: 56px;
 	list-style: none;
 	background-color: #ffffff;
+	box-sizing: border-box;
+	min-height: 330px;
 }
 
 .advice-item {
@@ -248,7 +253,7 @@ input[type="radio"].visually-hidden {
 }
 
 .advice-item:nth-child(2) {
-	background: url("../img/icon-food.svg") 161px 5px no-repeat;
+	background: url("../img/icon-food.svg") 49.5% 5px no-repeat;
 }
 
 .advice-item:last-child {
@@ -264,6 +269,7 @@ input[type="radio"].visually-hidden {
 	background-color: #eeeeee;
 	position: relative;
 	z-index: 4;
+	min-height: 256px;
 }
 
 .last-reasons-item {
@@ -500,12 +506,13 @@ input[type="radio"].visually-hidden {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	padding: 36px 8% 36px 11%;
+	padding: 35px 0 36px;
 	margin-bottom: 0;
 	background-color: rgba(254, 254, 254, 0.9);
 }
 
 .main-footer {
+	padding: 36px 0;
 	position: absolute;
 	bottom: 0;
 	box-sizing: border-box;
@@ -518,14 +525,18 @@ input[type="radio"].visually-hidden {
 	line-height: 26px;
 	margin: 0;
 	padding: 0;
-	margin-top: 10px;
+	margin-top: 9px;
+	text-align: center;
+	flex-basis: 33.3%;
+	vertical-align: bottom;
 }
 
 .footer-social  {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
-	margin-left: 33px;
+	flex-basis: 33.3%;
+	margin-left: 6px;
 }
 
 .social-button a {
@@ -573,13 +584,17 @@ input[type="radio"].visually-hidden {
 	background-image: url("../img/icon-youtube.svg");
 }
 
-.social-button a:active::before 
-{opacity: 0.5;}
+.social-button a:active::before {
+	opacity: 0.5;
+}
 
-.footer-copyright  {
+.footer-copyright {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
+	flex-basis: 33.3%;
+	padding-left: 6px;
+	box-sizing: border-box;
 }
 
 .footer-copyright p {
@@ -590,10 +605,9 @@ input[type="radio"].visually-hidden {
 }
 
 .copyright-link {
-	margin: 0 5px 0 7px;
+	margin: 0 5px 0 9px;
 	cursor: pointer;
 	align-self: flex-end;
-
 }
 .copyright-link svg {	
 	pointer-events: none;
@@ -622,6 +636,7 @@ input[type="radio"].visually-hidden {
 	background-color: #44535b;
 	background-position: center;
 	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
 .form ul,
@@ -638,14 +653,24 @@ input[type="radio"].visually-hidden {
 	padding: 27px 6% 32px;
 }
 
-.second-column, 
-.first-column {
-	flex-basis: 24%;
+.filter-form fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+.filter-form .second-column, 
+.filter-form .first-column {
+	flex-basis: 210px;
+}
+
+.filter-form .first-column {
+	margin-right: 4.2%;
 }
 
 .last-column-form {
-	margin-left: auto;
-	flex-basis: 30%;
+  margin-left: auto;
+	flex-basis: 30.2%;
 }
 
 .filter-form legend {
@@ -701,6 +726,7 @@ input[type="radio"].visually-hidden {
 	margin-bottom: 20px;
 	font-weight: 400;
 	padding-left: 20px;
+	min-width: 220px;
 }
 
 .filter-cost::after {
@@ -780,7 +806,9 @@ input[type="radio"].visually-hidden {
 
 .filter-button {
 	display: block;
-  margin: 0 auto 0 83px;
+  margin: 0 auto;
+  position: relative;
+  left: -5px;
   padding: 6px 34px;
   font-size: 14px;
   line-height: 21px;
@@ -800,12 +828,6 @@ input[type="radio"].visually-hidden {
 
 .filter-item {
 	margin-top: 25px;
-}
-
-.filter-form fieldset {
-	border: none;
-	padding: 0;
-	margin: 0;
 }
 
 .sorting-item-sum, 

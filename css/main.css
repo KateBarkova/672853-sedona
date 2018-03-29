@@ -660,11 +660,11 @@ input[type="radio"].visually-hidden {
 	cursor: pointer;
 }
 
-.filter-input-checkbox {
-	display: none;
-}
+.filter-checkbox:focus + label {
+	max-width: 120px; 
+	outline: 2px solid #81b3d2}
 
-.filter-input-checkbox + label::before {
+.filter-checkbox + label::before {
 	content: "";
 	position: absolute;
 	width: 27px;
@@ -676,15 +676,15 @@ input[type="radio"].visually-hidden {
 	cursor: pointer;
 }
 
-.filter-input-checkbox:checked + label::before {
+.filter-checkbox:checked + label::before {
 	background-image: url("../img/icon-checkbox-on.svg");
 }
 
-.filter-input-checkbox:disabled + label::before {
+.filter-checkbox:disabled + label::before {
 	background-image: url("../img/icon-checkbox-off-disable.svg");
 }
 
-.filter-input-checkbox:checked:disabled + label::before {
+.filter-checkbox:checked:disabled + label::before {
 	background-image: url("../img/icon-checkbox-on-disable.svg");
 }
 
@@ -931,22 +931,6 @@ input[type="radio"].visually-hidden {
 	border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .hotel-item {
 	display: flex;

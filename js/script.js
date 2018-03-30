@@ -26,7 +26,7 @@ anim.addEventListener("animationend", function()
 
 function initMap() {
   var uluru = {lat: 34.77, lng: -111.75};
-  var map = new google.maps.Map(document.getElementById('map'), {
+  var map = new google.maps.Map(document.getElementById("map"), {
     zoom: 9,
     center: uluru,
     disableDefaultUI: true
@@ -36,5 +36,3 @@ function initMap() {
     map: map
   });
 }
-
-

@@ -217,9 +217,11 @@ input[type="radio"].visually-hidden {
 .photo {
 	display: block;
 	position: relative;
-	bottom: 78px; 
-	object-fit: contain; 
 	width: 100%;
+	height: auto;
+	min-height: 256px;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .reason-photo {
